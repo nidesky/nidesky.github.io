@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://nidesky.github.io/about/index.html</loc>
+    <lastmod>2015-08-29T16:12:55.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nidesky.github.io/tags/index.html</loc>
+    <lastmod>2015-08-29T16:07:33.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://nidesky.github.io/2015/08/29/Centos-%E9%98%B2%E7%81%AB%E5%A2%99iptables-%E5%BC%80%E5%90%AF-3306%E7%AB%AF%E5%8F%A3/</loc>
     <lastmod>2015-08-29T15:39:14.000Z</lastmod>
   </url>
