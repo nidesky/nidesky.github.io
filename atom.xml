@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2015-08-29T16:59:29.000Z</updated>
+  <updated>2015-08-29T17:03:43.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://nidesky.github.io/2015/08/30/Laravel-5-1-%E5%BC%80%E5%8F%91%E6%89%A9%E5%B1%95%E5%8C%85/"/>
     <id>http://nidesky.github.io/2015/08/30/Laravel-5-1-开发扩展包/</id>
     <published>2015-08-29T16:58:11.000Z</published>
-    <updated>2015-08-29T16:59:29.000Z</updated>
+    <updated>2015-08-29T17:03:43.000Z</updated>
     <content type="html"><![CDATA[<h3 id="1-_安装_pingpong/workbench">1. 安装 <code>pingpong/workbench</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require pingpong/workbench</span><br></pre></td></tr></table></figure>
 <h3 id="2-_配置_pingpong/workbench">2. 配置 <code>pingpong/workbench</code></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 config/app.php 中的 providers 添加</span></span><br><span class="line">Pingpong\Workbench\WorkbenchServiceProvider</span><br></pre></td></tr></table></figure>
 <p>运行命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish</span><br></pre></td></tr></table></figure></p>
