@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2015-08-29T15:39:14.000Z</updated>
+  <updated>2015-08-29T16:59:29.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Laravel 5.1 开发扩展包]]></title>
+    <link href="http://nidesky.github.io/2015/08/30/Laravel-5-1-%E5%BC%80%E5%8F%91%E6%89%A9%E5%B1%95%E5%8C%85/"/>
+    <id>http://nidesky.github.io/2015/08/30/Laravel-5-1-开发扩展包/</id>
+    <published>2015-08-29T16:58:11.000Z</published>
+    <updated>2015-08-29T16:59:29.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="1-_安装_pingpong/workbench">1. 安装 <code>pingpong/workbench</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require pingpong/workbench</span><br></pre></td></tr></table></figure>
+<h3 id="2-_配置_pingpong/workbench">2. 配置 <code>pingpong/workbench</code></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 config/app.php 中的 providers 添加</span></span><br><span class="line">Pingpong\Workbench\WorkbenchServiceProvider</span><br></pre></td></tr></table></figure>
+<p>运行命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-_创建扩展包">3. 创建扩展包</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan workbench vendor/package&#10;php artisan workbench vendor/package --resources&#10;// php artisan workbench nidesky/sweet-alert</span><br></pre></td></tr></table></figure>
+<h3 id="4-_引入命名空间">4. 引入命名空间</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"autoload"</span>: &#123;</span><br><span class="line">    <span class="string">"classmap"</span>: [</span><br><span class="line">        <span class="string">"database"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"psr-4"</span>: &#123;</span><br><span class="line">        <span class="string">"App\\"</span>: <span class="string">"app/"</span>,</span><br><span class="line">+       <span class="string">"Nidesky\\SweetAlert\\"</span>: <span class="string">"workbench/nidesky/sweet-alert/src/Nidesky/SweetAlert"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="1-_安装_pingpong/workbench">1. 安装 <code>pingpong/workbench</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><sp]]>
+    </summary>
+    
+      <category term="laravel" scheme="http://nidesky.github.io/tags/laravel/"/>
+    
+      <category term="packages" scheme="http://nidesky.github.io/tags/packages/"/>
+    
+      <category term="php" scheme="http://nidesky.github.io/tags/php/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Centos 防火墙iptables 开启 3306端口]]></title>

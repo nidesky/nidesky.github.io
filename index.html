@@ -164,6 +164,71 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/30/Laravel-5-1-开发扩展包/" itemprop="url">
+                Laravel 5.1 开发扩展包
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-30T00:58:11+08:00" content="2015-08-30">
+            2015-08-30
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="1-_安装_pingpong/workbench">1. 安装 <code>pingpong/workbench</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require pingpong/workbench</span><br></pre></td></tr></table></figure>
+<h3 id="2-_配置_pingpong/workbench">2. 配置 <code>pingpong/workbench</code></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 config/app.php 中的 providers 添加</span></span><br><span class="line">Pingpong\Workbench\WorkbenchServiceProvider</span><br></pre></td></tr></table></figure>
+<p>运行命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-_创建扩展包">3. 创建扩展包</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan workbench vendor/package&#10;php artisan workbench vendor/package --resources&#10;// php artisan workbench nidesky/sweet-alert</span><br></pre></td></tr></table></figure>
+<h3 id="4-_引入命名空间">4. 引入命名空间</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"autoload"</span>: &#123;</span><br><span class="line">    <span class="string">"classmap"</span>: [</span><br><span class="line">        <span class="string">"database"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"psr-4"</span>: &#123;</span><br><span class="line">        <span class="string">"App\\"</span>: <span class="string">"app/"</span>,</span><br><span class="line">+       <span class="string">"Nidesky\\SweetAlert\\"</span>: <span class="string">"workbench/nidesky/sweet-alert/src/Nidesky/SweetAlert"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/29/Centos-防火墙iptables-开启-3306端口/" itemprop="url">
                 Centos 防火墙iptables 开启 3306端口
               </a>
@@ -249,7 +314,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -263,7 +328,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

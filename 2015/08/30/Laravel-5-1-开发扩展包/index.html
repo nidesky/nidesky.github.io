@@ -26,7 +26,7 @@
 
 
 
-  <meta name="keywords" content="omac, laravel, php, node" />
+  <meta name="keywords" content="laravel,packages,php," />
 
 
 
@@ -37,19 +37,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="1. 添加防火墙规则1vi /etc/sysconfig/iptables&amp;#10;&amp;#10;# &amp;#28155;&amp;#21152;&amp;#19979;&amp;#38754;&amp;#36825;&amp;#34892;&amp;#10;-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
-2. 重启防火墙1service iptables resta">
+<meta name="description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
+2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
+运行命令1php artisan vendor:publish
+3.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos 防火墙iptables 开启 3306端口">
-<meta property="og:url" content="http://nidesky.github.io/2015/08/29/Centos-防火墙iptables-开启-3306端口/index.html">
+<meta property="og:title" content="Laravel 5.1 开发扩展包">
+<meta property="og:url" content="http://nidesky.github.io/2015/08/30/Laravel-5-1-开发扩展包/index.html">
 <meta property="og:site_name" content="丁俊斌的博客">
-<meta property="og:description" content="1. 添加防火墙规则1vi /etc/sysconfig/iptables&amp;#10;&amp;#10;# &amp;#28155;&amp;#21152;&amp;#19979;&amp;#38754;&amp;#36825;&amp;#34892;&amp;#10;-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
-2. 重启防火墙1service iptables resta">
-<meta property="og:updated_time" content="2015-08-29T15:39:14.000Z">
+<meta property="og:description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
+2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
+运行命令1php artisan vendor:publish
+3.">
+<meta property="og:updated_time" content="2015-08-29T16:59:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos 防火墙iptables 开启 3306端口">
-<meta name="twitter:description" content="1. 添加防火墙规则1vi /etc/sysconfig/iptables&amp;#10;&amp;#10;# &amp;#28155;&amp;#21152;&amp;#19979;&amp;#38754;&amp;#36825;&amp;#34892;&amp;#10;-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
-2. 重启防火墙1service iptables resta">
+<meta name="twitter:title" content="Laravel 5.1 开发扩展包">
+<meta name="twitter:description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
+2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
+运行命令1php artisan vendor:publish
+3.">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -59,7 +65,7 @@
   };
 </script>
 
-  <title> Centos 防火墙iptables 开启 3306端口 | 丁俊斌的博客 </title>
+  <title> Laravel 5.1 开发扩展包 | 丁俊斌的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -166,7 +172,7 @@
           
           
             
-              Centos 防火墙iptables 开启 3306端口
+              Laravel 5.1 开发扩展包
             
           
         </h1>
@@ -175,8 +181,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-29T23:38:06+08:00" content="2015-08-29">
-            2015-08-29
+          <time itemprop="dateCreated" datetime="2015-08-30T00:58:11+08:00" content="2015-08-30">
+            2015-08-30
           </time>
         </span>
 
@@ -194,23 +200,36 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="1-_添加防火墙规则">1. 添加防火墙规则</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/iptables&#10;&#10;# &#28155;&#21152;&#19979;&#38754;&#36825;&#34892;&#10;-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT</span><br></pre></td></tr></table></figure>
-<h3 id="2-_重启防火墙">2. 重启防火墙</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables restart</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><h3 id="1-_安装_pingpong/workbench">1. 安装 <code>pingpong/workbench</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require pingpong/workbench</span><br></pre></td></tr></table></figure>
+<h3 id="2-_配置_pingpong/workbench">2. 配置 <code>pingpong/workbench</code></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 config/app.php 中的 providers 添加</span></span><br><span class="line">Pingpong\Workbench\WorkbenchServiceProvider</span><br></pre></td></tr></table></figure>
+<p>运行命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-_创建扩展包">3. 创建扩展包</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan workbench vendor/package&#10;php artisan workbench vendor/package --resources&#10;// php artisan workbench nidesky/sweet-alert</span><br></pre></td></tr></table></figure>
+<h3 id="4-_引入命名空间">4. 引入命名空间</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"autoload"</span>: &#123;</span><br><span class="line">    <span class="string">"classmap"</span>: [</span><br><span class="line">        <span class="string">"database"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"psr-4"</span>: &#123;</span><br><span class="line">        <span class="string">"App\\"</span>: <span class="string">"app/"</span>,</span><br><span class="line">+       <span class="string">"Nidesky\\SweetAlert\\"</span>: <span class="string">"workbench/nidesky/sweet-alert/src/Nidesky/SweetAlert"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/laravel/" rel="tag">#laravel</a>
+          
+            <a href="/tags/packages/" rel="tag">#packages</a>
+          
+            <a href="/tags/php/" rel="tag">#php</a>
+          
+        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/30/Laravel-5-1-开发扩展包/" rel="prev">Laravel 5.1 开发扩展包</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/29/Centos-防火墙iptables-开启-3306端口/" rel="next">Centos 防火墙iptables 开启 3306端口</a>
             
           </div>
         </div>
@@ -331,7 +350,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_添加防火墙规则"><span class="nav-number">1.</span> <span class="nav-text">1. 添加防火墙规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_重启防火墙"><span class="nav-number">2.</span> <span class="nav-text">2. 重启防火墙</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_安装_pingpong/workbench"><span class="nav-number">1.</span> <span class="nav-text">1. 安装 pingpong/workbench</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_配置_pingpong/workbench"><span class="nav-number">2.</span> <span class="nav-text">2. 配置 pingpong/workbench</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_创建扩展包"><span class="nav-number">3.</span> <span class="nav-text">3. 创建扩展包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_引入命名空间"><span class="nav-number">4.</span> <span class="nav-text">4. 引入命名空间</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

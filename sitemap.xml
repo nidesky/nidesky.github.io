@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://nidesky.github.io/2015/08/30/Laravel-5-1-%E5%BC%80%E5%8F%91%E6%89%A9%E5%B1%95%E5%8C%85/</loc>
+    <lastmod>2015-08-29T16:59:29.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://nidesky.github.io/about/index.html</loc>
     <lastmod>2015-08-29T16:12:55.000Z</lastmod>
   </url>
