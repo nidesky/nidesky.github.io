@@ -26,7 +26,7 @@
 
 
 
-  <meta name="keywords" content="gulp," />
+  <meta name="keywords" content="phpstorm," />
 
 
 
@@ -37,22 +37,27 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="引用地址 https://gist.github.com/laracasts/52a9f085408605a06400
+<meta name="description" content="今天遇到了一个问题， 就是 PHPStorm 上的标签颜色太暗了：
 
-1. 问题代码1var gulp = require(&amp;#39;gulp&amp;#39;);&amp;#10;var phpspec = require(&amp;#39;gulp-phpspec&amp;#39;);&amp;#10;var run = require(&amp;#39;gulp-run&amp;#39;);&amp;#">
+然后找配置找了半天也没有发现，到 Stackoverflow 上一下就找到了:
+Settings &amp;gt; IDE Settings &amp;gt; Editor &amp;gt; Colors &amp;amp; Fonts &amp;gt; File Status.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gulp-run clear 报错">
-<meta property="og:url" content="http://nidesky.github.io/2015/08/30/gulp-run-clear-报错/index.html">
+<meta property="og:title" content="phpstorm 改变tabs 上文件名的颜色">
+<meta property="og:url" content="http://nidesky.github.io/2015/08/30/phpstorm-改变tabs-上文件名的颜色/index.html">
 <meta property="og:site_name" content="丁俊斌的博客">
-<meta property="og:description" content="引用地址 https://gist.github.com/laracasts/52a9f085408605a06400
+<meta property="og:description" content="今天遇到了一个问题， 就是 PHPStorm 上的标签颜色太暗了：
 
-1. 问题代码1var gulp = require(&amp;#39;gulp&amp;#39;);&amp;#10;var phpspec = require(&amp;#39;gulp-phpspec&amp;#39;);&amp;#10;var run = require(&amp;#39;gulp-run&amp;#39;);&amp;#">
-<meta property="og:updated_time" content="2015-08-29T17:07:28.000Z">
+然后找配置找了半天也没有发现，到 Stackoverflow 上一下就找到了:
+Settings &amp;gt; IDE Settings &amp;gt; Editor &amp;gt; Colors &amp;amp; Fonts &amp;gt; File Status.">
+<meta property="og:image" content="http://7oxep2.com1.z0.glb.clouddn.com/QQ20150830-2.png">
+<meta property="og:image" content="http://7oxep2.com1.z0.glb.clouddn.com/QQ20150830-3.png">
+<meta property="og:updated_time" content="2015-08-30T10:01:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gulp-run clear 报错">
-<meta name="twitter:description" content="引用地址 https://gist.github.com/laracasts/52a9f085408605a06400
+<meta name="twitter:title" content="phpstorm 改变tabs 上文件名的颜色">
+<meta name="twitter:description" content="今天遇到了一个问题， 就是 PHPStorm 上的标签颜色太暗了：
 
-1. 问题代码1var gulp = require(&amp;#39;gulp&amp;#39;);&amp;#10;var phpspec = require(&amp;#39;gulp-phpspec&amp;#39;);&amp;#10;var run = require(&amp;#39;gulp-run&amp;#39;);&amp;#">
+然后找配置找了半天也没有发现，到 Stackoverflow 上一下就找到了:
+Settings &amp;gt; IDE Settings &amp;gt; Editor &amp;gt; Colors &amp;amp; Fonts &amp;gt; File Status.">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +67,7 @@
   };
 </script>
 
-  <title> gulp-run clear 报错 | 丁俊斌的博客 </title>
+  <title> phpstorm 改变tabs 上文件名的颜色 | 丁俊斌的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -160,7 +165,7 @@
   <div id="posts" class="posts-expand">
     
 
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       
@@ -169,7 +174,7 @@
           
           
             
-              gulp-run clear 报错
+              phpstorm 改变tabs 上文件名的颜色
             
           
         </h1>
@@ -178,7 +183,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-30T01:05:49+08:00" content="2015-08-30">
+          <time itemprop="dateCreated" datetime="2015-08-30T17:49:39+08:00" content="2015-08-30">
             2015-08-30
           </time>
         </span>
@@ -197,12 +202,12 @@
       
 
       
-        <span itemprop="articleBody"><blockquote>
-<p>引用地址 <a href="https://gist.github.com/laracasts/52a9f085408605a06400" target="_blank" rel="external">https://gist.github.com/laracasts/52a9f085408605a06400</a></p>
-</blockquote>
-<h3 id="1-_问题代码">1. 问题代码</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&#39;gulp&#39;);&#10;var phpspec = require(&#39;gulp-phpspec&#39;);&#10;var run = require(&#39;gulp-run&#39;);&#10;var notify = require(&#39;gulp-notify&#39;);&#10;&#10;gulp.task(&#39;test&#39;, function() &#123;&#10;   gulp.src(&#39;spec/**/*.php&#39;)&#10;       .pipe(run(&#39;clear&#39;))&#10;       .pipe(phpspec(&#39;&#39;, &#123; notify: true &#125;))&#10;       .on(&#39;error&#39;, notify.onError(&#123;&#10;           title: &#39;Dangit&#39;,&#10;           message: &#39;Your tests failed!&#39;,&#10;           icon: __dirname + &#39;/fail.png&#39;&#10;       &#125;))&#10;       .pipe(notify(&#123;&#10;           title: &#39;Success&#39;,&#10;           message: &#39;All tests have returned green!&#39;&#10;       &#125;));&#10;&#125;);&#10;&#10;gulp.task(&#39;watch&#39;, function() &#123;&#10;   gulp.watch([&#39;spec/**/*.php&#39;, &#39;src/**/*.php&#39;], [&#39;test&#39;]);&#10;&#125;);&#10;&#10;gulp.task(&#39;default&#39;, [&#39;test&#39;, &#39;watch&#39;]);</span><br></pre></td></tr></table></figure>
-<h3 id="2-_问题重现">2. 问题重现</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">events.js:85&#10;      throw er; // Unhandled &#39;error&#39; event&#10;            ^&#10;Error: write EPIPE&#10;    at exports._errnoException (util.js:746:11)&#10;    at WriteWrap.afterWrite (net.js:775:14)</span><br></pre></td></tr></table></figure>
-<h3 id="3-_解决方案">3. 解决方案</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Change line 8 for this:&#10;.pipe(run(&#39;clear&#39;).exec())</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><p>今天遇到了一个问题， 就是 <code>PHPStorm</code> 上的标签颜色太暗了：</p>
+<p><img src="http://7oxep2.com1.z0.glb.clouddn.com/QQ20150830-2.png" alt=""></p>
+<p>然后找配置找了半天也没有发现，到 <code>Stackoverflow</code> 上一下就找到了:</p>
+<p><code>Settings &gt; IDE Settings &gt; Editor &gt; Colors &amp; Fonts &gt; File Status.</code></p>
+<p><img src="http://7oxep2.com1.z0.glb.clouddn.com/QQ20150830-3.png" alt=""></p>
+</span>
       
     </div>
 
@@ -210,7 +215,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/gulp/" rel="tag">#gulp</a>
+            <a href="/tags/phpstorm/" rel="tag">#phpstorm</a>
           
         </div>
       
@@ -219,13 +224,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/30/phpstorm-改变tabs-上文件名的颜色/" rel="prev">phpstorm 改变tabs 上文件名的颜色</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/30/Laravel-5-1-开发扩展包/" rel="next">Laravel 5.1 开发扩展包</a>
+              <a href="/2015/08/30/gulp-run-clear-报错/" rel="next">gulp-run clear 报错</a>
             
           </div>
         </div>
@@ -346,7 +349,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_问题代码"><span class="nav-number">1.</span> <span class="nav-text">1. 问题代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_问题重现"><span class="nav-number">2.</span> <span class="nav-text">2. 问题重现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_解决方案"><span class="nav-number">3.</span> <span class="nav-text">3. 解决方案</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

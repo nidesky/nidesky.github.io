@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2015-08-29T17:07:28.000Z</updated>
+  <updated>2015-08-30T10:01:00.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[phpstorm 改变tabs 上文件名的颜色]]></title>
+    <link href="http://nidesky.github.io/2015/08/30/phpstorm-%E6%94%B9%E5%8F%98tabs-%E4%B8%8A%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E9%A2%9C%E8%89%B2/"/>
+    <id>http://nidesky.github.io/2015/08/30/phpstorm-改变tabs-上文件名的颜色/</id>
+    <published>2015-08-30T09:49:39.000Z</published>
+    <updated>2015-08-30T10:01:00.000Z</updated>
+    <content type="html"><![CDATA[<p>今天遇到了一个问题， 就是 <code>PHPStorm</code> 上的标签颜色太暗了：</p>
+<p><img src="http://7oxep2.com1.z0.glb.clouddn.com/QQ20150830-2.png" alt=""></p>
+<p>然后找配置找了半天也没有发现，到 <code>Stackoverflow</code> 上一下就找到了:</p>
+<p><code>Settings &gt; IDE Settings &gt; Editor &gt; Colors &amp; Fonts &gt; File Status.</code></p>
+<p><img src="http://7oxep2.com1.z0.glb.clouddn.com/QQ20150830-3.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天遇到了一个问题， 就是 <code>PHPStorm</code> 上的标签颜色太暗了：</p>
+<p><img src="http://7oxep2.com1.z0.glb.clouddn.com/QQ20150830-2.png" alt=""></p>
+<p>然后]]>
+    </summary>
+    
+      <category term="phpstorm" scheme="http://nidesky.github.io/tags/phpstorm/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[gulp-run clear 报错]]></title>
