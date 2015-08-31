@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2015-08-30T15:13:49.000Z</updated>
+  <updated>2015-08-31T09:22:44.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[更新node和npm版本]]></title>
+    <link href="http://nidesky.github.io/2015/08/31/%E6%9B%B4%E6%96%B0node%E5%92%8Cnpm%E7%89%88%E6%9C%AC/"/>
+    <id>http://nidesky.github.io/2015/08/31/更新node和npm版本/</id>
+    <published>2015-08-31T09:16:58.000Z</published>
+    <updated>2015-08-31T09:22:44.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="更新_Npm_版本">更新 Npm 版本</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install npm -g</span><br></pre></td></tr></table></figure>
+<h2 id="更新_Node_版本">更新 Node 版本</h2><h3 id="安装_n_模块">安装 n 模块</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g n</span><br></pre></td></tr></table></figure>
+<h3 id="升级_nodejs">升级 nodejs</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#21319;&#32423; Nodejs &#21040;&#26368;&#26032;&#29256;&#26412;&#10;n stable&#10;&#10;# n &#21518;&#38754;&#20063;&#21487;&#20197;&#36319;&#38543;&#29256;&#26412;&#21495;&#65306;&#10;n v0.10.26&#10;&#10;# &#25110;&#10;v 0.10.26</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="更新_Npm_版本">更新 Npm 版本</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td ]]>
+    </summary>
+    
+      <category term="node" scheme="http://nidesky.github.io/tags/node/"/>
+    
+      <category term="npm" scheme="http://nidesky.github.io/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Frameworks Are Not Tools]]></title>
