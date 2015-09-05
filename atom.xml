@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2015-09-04T17:18:42.000Z</updated>
+  <updated>2015-09-05T18:49:57.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -13,6 +13,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[dingo/api]]></title>
+    <link href="http://nidesky.github.io/2015/09/05/dingo-api/"/>
+    <id>http://nidesky.github.io/2015/09/05/dingo-api/</id>
+    <published>2015-09-05T03:07:14.000Z</published>
+    <updated>2015-09-05T18:49:57.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="dingo/api_Wiki">dingo/api Wiki</h1><hr>
+<p><code>Dingo Api</code> 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 <code>API</code> 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。</p>
+<h2 id="安装">安装</h2><p>前提环境:</p>
+<ul>
+<li>Laravel 5.1 + 或者 Lumen 5.1 +</li>
+<li>PHP 5.5.9 +</li>
+</ul>
+<p>你首先要在你的项目中修改 <code>composer.json</code> 文件，然后运行 <code>composer update</code> 来安装最新版本的包。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"require"</span>: &#123;</span><br><span class="line">    <span class="string">"dingo/api"</span>: <span class="string">"1.0.*@dev"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者你可以在命令行中运行 <code>compsoer require</code> 命令。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require dingo/api:1.0.x@dev</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此时的包仍处于开发阶段，因此它不是一个正式发布的版本。你需要在 <code>dev</code> 中添加 <code>minimum-stability</code>。</p>
+</blockquote>
+<p>一旦包安装成功后，接下来就看你使用的框架了。</p>
+<h3 id="Laravel">Laravel</h3><p>打开 <code>config/app.php</code> , 并注册服务提供者(<code>Service Provider</code>)。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'providers'</span> =&gt; [</span><br><span class="line">    Dingo\Api\Provider\LaravelServiceProvider::class</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>如果你想修改包配置文件中的配置，那么你可以尝试通过 <code>Artisan command</code> 发布它：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish --provider=<span class="string">"Dingo\Api\Provider\LaravelServiceProvider"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Lumen">Lumen</h3><p>打开 <code>bootstrap/app.php</code> , 然后注册服务提供者(<code>Service provider</code>)。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$app</span>-&gt;register(Dingo\Api\Provider\LumenServiceProvider::class);</span><br></pre></td></tr></table></figure>
+<h3 id="Facades">Facades</h3><p>在包中有两个门面。你可以添加任何一个你想要的门面。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dingo\Api\Facade\API</span><br></pre></td></tr></table></figure>
+<p>这是一个调度的门面，但是，他也在包中提供了辅助方法等方法。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dingo\Api\Facade\Route</span><br></pre></td></tr></table></figure>
+<p>这是一个针对于 <code>API</code> 路由提供者和可被用于获取当前路由，请求，检查当前路由名称的一个门面。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="dingo/api_Wiki">dingo/api Wiki</h1><hr>
+<p><code>Dingo Api</code> 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 <code>API</code> 的工具。尽管这个包的目的是尽可能地灵活，但]]>
+    </summary>
+    
+      <category term="api" scheme="http://nidesky.github.io/tags/api/"/>
+    
+      <category term="dingo" scheme="http://nidesky.github.io/tags/dingo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[面向对象的5个基本设计原则]]></title>
