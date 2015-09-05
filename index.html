@@ -221,6 +221,12 @@
 <p>这是一个调度的门面，但是，他也在包中提供了辅助方法等方法。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dingo\Api\Facade\Route</span><br></pre></td></tr></table></figure>
 <p>这是一个针对于 <code>API</code> 路由提供者和可被用于获取当前路由，请求，检查当前路由名称的一个门面。</p>
+<hr>
+<h2 id="配置">配置</h2><p>大部分的包可以通过预先配置来尽可能快的构建 <code>API</code>。你可以使用 <code>.env</code> 文件来配置大多数的包，然而一些更详细地配置需要你要么发布配置文件(<code>Laravel</code>)，或者配置 <code>bootstrap/app.php</code> (<code>Lumen</code>)。你也可以通过使用 <code>AppServiceProvider</code> 的 <code>boot</code> 方法。</p>
+<p><strong>Important:</strong>如果你是用 <code>Laravel 5</code>，你必须发布你的配置文件或者一个服务提供商。不要使用 <code>bootstrap/app.php</code> 文件。</p>
+<p>如果你使用 <code>Laravel</code> ，你可以通过 <code>Artisan command</code> 来发布配置文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish --provider=&#34;Dingo\Api\Provider\LaravelServiceProvider&#34;</span><br></pre></td></tr></table></figure>
+<p><strong><em>未完待续。。。</em></strong></p>
 </span>
         
       
