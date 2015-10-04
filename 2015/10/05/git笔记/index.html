@@ -26,7 +26,7 @@
 
 
 
-  <meta name="keywords" content="node,npm," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -37,22 +37,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="更新 Npm 版本1sudo npm install npm -g
-更新 Node 版本安装 n 模块1sudo npm install -g n
-升级 nodejs1# &amp;#21319;&amp;#32423; Nodejs &amp;#21040;&amp;#26368;&amp;#26032;&amp;#29256;&amp;#26412;&amp;#10;n stable&amp;#10;&amp;#10;# n &amp;#21518;&amp;#38754;&amp;#20063">
+<meta name="description" content="git 操作笔记
+常见操作备忘删除远程分支查看所有分支1git branch -a
+删除远程分支 demo1git branch -r -d origin/demo&amp;#10;git push origin :demo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="更新node和npm版本">
-<meta property="og:url" content="http://nidesky.github.io/2015/08/31/更新node和npm版本/index.html">
+<meta property="og:title" content="git笔记">
+<meta property="og:url" content="http://nidesky.github.io/2015/10/05/git笔记/index.html">
 <meta property="og:site_name" content="丁俊斌的博客">
-<meta property="og:description" content="更新 Npm 版本1sudo npm install npm -g
-更新 Node 版本安装 n 模块1sudo npm install -g n
-升级 nodejs1# &amp;#21319;&amp;#32423; Nodejs &amp;#21040;&amp;#26368;&amp;#26032;&amp;#29256;&amp;#26412;&amp;#10;n stable&amp;#10;&amp;#10;# n &amp;#21518;&amp;#38754;&amp;#20063">
-<meta property="og:updated_time" content="2015-08-31T09:22:44.000Z">
+<meta property="og:description" content="git 操作笔记
+常见操作备忘删除远程分支查看所有分支1git branch -a
+删除远程分支 demo1git branch -r -d origin/demo&amp;#10;git push origin :demo">
+<meta property="og:updated_time" content="2015-10-04T16:20:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="更新node和npm版本">
-<meta name="twitter:description" content="更新 Npm 版本1sudo npm install npm -g
-更新 Node 版本安装 n 模块1sudo npm install -g n
-升级 nodejs1# &amp;#21319;&amp;#32423; Nodejs &amp;#21040;&amp;#26368;&amp;#26032;&amp;#29256;&amp;#26412;&amp;#10;n stable&amp;#10;&amp;#10;# n &amp;#21518;&amp;#38754;&amp;#20063">
+<meta name="twitter:title" content="git笔记">
+<meta name="twitter:description" content="git 操作笔记
+常见操作备忘删除远程分支查看所有分支1git branch -a
+删除远程分支 demo1git branch -r -d origin/demo&amp;#10;git push origin :demo">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +62,7 @@
   };
 </script>
 
-  <title> 更新node和npm版本 | 丁俊斌的博客 </title>
+  <title> git笔记 | 丁俊斌的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -169,7 +169,7 @@
           
           
             
-              更新node和npm版本
+              git笔记
             
           
         </h1>
@@ -178,8 +178,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-31T17:16:58+08:00" content="2015-08-31">
-            2015-08-31
+          <time itemprop="dateCreated" datetime="2015-10-05T00:16:47+08:00" content="2015-10-05">
+            2015-10-05
           </time>
         </span>
 
@@ -197,9 +197,10 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="更新_Npm_版本">更新 Npm 版本</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install npm -g</span><br></pre></td></tr></table></figure>
-<h2 id="更新_Node_版本">更新 Node 版本</h2><h3 id="安装_n_模块">安装 n 模块</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g n</span><br></pre></td></tr></table></figure>
-<h3 id="升级_nodejs">升级 nodejs</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#21319;&#32423; Nodejs &#21040;&#26368;&#26032;&#29256;&#26412;&#10;n stable&#10;&#10;# n &#21518;&#38754;&#20063;&#21487;&#20197;&#36319;&#38543;&#29256;&#26412;&#21495;&#65306;&#10;n v0.10.26&#10;&#10;# &#25110;&#10;v 0.10.26</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><h1 id="git_操作笔记">git 操作笔记</h1><hr>
+<h2 id="常见操作">常见操作</h2><h2 id="备忘">备忘</h2><h3 id="删除远程分支">删除远程分支</h3><p>查看所有分支<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure></p>
+<p>删除远程分支 <code>demo</code><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r -d origin/demo&#10;git push origin :demo</span><br></pre></td></tr></table></figure></p>
+</span>
       
     </div>
 
@@ -207,9 +208,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/node/" rel="tag">#node</a>
-          
-            <a href="/tags/npm/" rel="tag">#npm</a>
+            <a href="/tags/git/" rel="tag">#git</a>
           
         </div>
       
@@ -218,13 +217,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/05/面向对象的5个基本设计原则/" rel="prev">面向对象的5个基本设计原则</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/30/Frameworks-Are-Not-Tools/" rel="next">Frameworks Are Not Tools</a>
+              <a href="/2015/10/03/让程序员更有干劲的10个技能/" rel="next">让程序员更有干劲的10个技能</a>
             
           </div>
         </div>
@@ -345,7 +342,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更新_Npm_版本"><span class="nav-number">1.</span> <span class="nav-text">更新 Npm 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新_Node_版本"><span class="nav-number">2.</span> <span class="nav-text">更新 Node 版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装_n_模块"><span class="nav-number">2.1.</span> <span class="nav-text">安装 n 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级_nodejs"><span class="nav-number">2.2.</span> <span class="nav-text">升级 nodejs</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git_操作笔记"><span class="nav-number">1.</span> <span class="nav-text">git 操作笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见操作"><span class="nav-number">1.1.</span> <span class="nav-text">常见操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘"><span class="nav-number">1.2.</span> <span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支"><span class="nav-number">1.2.1.</span> <span class="nav-text">删除远程分支</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
