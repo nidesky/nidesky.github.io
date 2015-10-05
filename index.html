@@ -210,13 +210,9 @@
 <li>README.md 修改后，还没有添加到暂存区，撤消后恢复成版本库中的状态。</li>
 <li>已经放入到暂存区，又进行了修改，那么撤消后将恢复成加入暂存区之后的状态。</li>
 </ol>
-<h3 id="将本地仓库与远程仓库关联">将本地仓库与远程仓库关联</h3><ol>
-<li>新建本地仓库与远程关联</li>
-</ol>
+<h3 id="将本地仓库与远程仓库关联">将本地仓库与远程仓库关联</h3><p>新建本地仓库与远程关联</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init&#10;git add README.md&#10;git commit -m &#39;first commit&#39;&#10;git remote add origin https://github.com/symfony/symfony.git&#10;git push -u origin master</span><br></pre></td></tr></table></figure>
-<ol>
-<li>已存在的本地仓库与远程关联</li>
-</ol>
+<p>已存在的本地仓库与远程关联</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/symfony/symfony.git&#10;git push -u origin master</span><br></pre></td></tr></table></figure>
 <h3 id="提交到远程仓库">提交到远程仓库</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#25552;&#20132;&#21040;&#36828;&#31243;&#30340; master &#20998;&#25903;&#10;git push origin master</span><br></pre></td></tr></table></figure>
 <h3 id="创建分支和查看分支">创建分支和查看分支</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;# &#21019;&#24314; dev &#20998;&#25903;&#10;git branch dev&#10;&#10;# &#20999;&#25442;&#21040; dev &#20998;&#25903;&#10;git checkout dev&#10;&#10;# &#21019;&#24314;&#24182;&#20999;&#25442;&#21040; dev &#20998;&#25903;&#10;git checkout -b dev&#10;&#10;# &#26597;&#30475;&#24403;&#21069;&#20998;&#25903;&#10;git branch</span><br></pre></td></tr></table></figure>
@@ -224,10 +220,18 @@
 <h3 id="删除分支">删除分支</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
 <p>通常合并分支时，git一般使用”Fast forward”模式，在这种模式下，删除分支后，会丢掉分支信息，现在我们来使用带参数 –no-ff来禁用”Fast forward”模式。这样我们就可以合并分支后，在主分支保留开发分支的版本信息。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --no-ff -m &#34;&#21512;&#24182;&#27880;&#37322;&#34; dev</span><br></pre></td></tr></table></figure>
+<h3 id="bug_分支">bug 分支</h3><p>在开发中经常会遇到，我们正在当前分支开发一个功能，但突然有个 bug 急需需改，但是我们又不想提交，这时 git 为我们提供了一个 stash 的功能，可以把当前的工作现场隐藏起来，等到以后恢复现场可以继续工作。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#38544;&#34255;&#24403;&#21069;&#24037;&#20316;&#29616;&#22330;&#10;git stash &#10;&#10;# &#26597;&#30475;&#20998;&#25903;&#29366;&#24577;, &#20250;&#21457;&#29616;&#26159;&#24178;&#20928;&#30340;&#10;git status &#10;&#10;# &#39318;&#20808;&#30830;&#23450;&#26159;&#22312;&#21738;&#20010;&#20998;&#25903;&#19978;&#20462;&#22797; bug&#65292; &#27604;&#22914;&#35828;&#22312; master&#65292;&#37027;&#20040;&#25105;&#20204;&#22312; master &#19978;&#24314;&#31435;&#19968;&#20010; bug &#20998;&#25903;&#12290;&#10;git checkout -b issue-404&#10;&#10;# &#20462;&#22797;&#25991;&#20214;&#24182;&#25552;&#20132;&#25991;&#20214;&#12290;&#12290;&#12290;&#10;&#10;# &#20999;&#25442;&#21040; master, &#23436;&#25104;&#21512;&#24182;&#65292;&#21024;&#38500; issue-404 &#20998;&#25903;&#12290;&#10;git checkout master&#10;git merge --no-ff -m &#34;merge bug fix 404&#34; issue-404&#10;git branch -d issue-404&#10;&#10;# &#28982;&#21518;&#22238;&#21040; dev &#20998;&#25903;&#65292;&#26597;&#30475;&#20998;&#25903;&#29366;&#24577;&#65292;&#21457;&#29616;&#26159;&#24178;&#20928;&#30340;&#10;git checkout dev&#10;git status&#10;&#10;# &#29616;&#22312;&#25105;&#20204;&#21435;&#24674;&#22797;&#29616;&#22330;&#10;# &#39318;&#20808;&#26597;&#30475;&#24037;&#20316;&#29616;&#22330;&#30340;&#21015;&#34920;&#10;git stash list&#10;&#10;# &#35201;&#24674;&#22797;&#24037;&#20316;&#29616;&#22330;&#65292;&#21487;&#20197;&#20351;&#29992;&#22914;&#19979;2&#20010;&#26041;&#27861;&#65306;&#10;# 1. git stash apply&#24674;&#22797;&#65292;&#24674;&#22797;&#21518;&#65292;stash&#20869;&#23481;&#24182;&#19981;&#21024;&#38500;&#65292;&#20320;&#38656;&#35201;&#20351;&#29992;&#21629;&#20196;git stash drop&#26469;&#21024;&#38500;&#12290;&#10;git stash apply&#10;git stash drop&#10;&#10;# 2. &#21478;&#19968;&#31181;&#26041;&#24335;&#26159;&#20351;&#29992;git stash pop,&#24674;&#22797;&#30340;&#21516;&#26102;&#25226;stash&#20869;&#23481;&#20063;&#21024;&#38500;&#20102;&#12290;&#10;git stash pop</span><br></pre></td></tr></table></figure>
+<h3 id="多人协作">多人协作</h3><h4 id="查看远程库信息。">查看远程库信息。</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#26597;&#30475;&#36828;&#31243;&#24211;&#20449;&#24687;&#10;git remote&#10;&#10;# &#20135;&#30475;&#36828;&#31243;&#24211;&#30340;&#35814;&#32454;&#20449;&#24687;&#10;git remote -v</span><br></pre></td></tr></table></figure>
+<h4 id="推送分支">推送分支</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#25512;&#36865; dev &#20998;&#25903;&#10;git push origin dev</span><br></pre></td></tr></table></figure>
+<h4 id="抓取远程分支">抓取远程分支</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#25235;&#21462;&#36828;&#31243;&#30340; dev&#10;git checkout -b dev origin/dev</span><br></pre></td></tr></table></figure>
 <h2 id="备忘">备忘</h2><h3 id="删除远程分支">删除远程分支</h3><p>查看所有分支。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
 <p>删除远程分支 <code>demo</code>。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r -d origin/demo&#10;git push origin :demo</span><br></pre></td></tr></table></figure></span>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r -d origin/demo&#10;git push origin :demo</span><br></pre></td></tr></table></figure>
+<h3 id="git_fetch_和_git_pull_区别">git fetch 和 git pull 区别</h3><p><code>git fetch</code>: 相当于从远程获取最新版本到本地，不会自动 <code>merge</code>。</p>
+<p><code>git pull</code>: 会从远程获取最新版本并 <code>merge</code> 到本地。相当于：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master&#10;git merge origin/master</span><br></pre></td></tr></table></figure></span>
         
       
     </div>
