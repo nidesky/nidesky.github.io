@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2015-10-05T15:44:51.000Z</updated>
+  <updated>2015-10-05T15:50:13.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://nidesky.github.io/2015/10/05/git%E7%AC%94%E8%AE%B0/"/>
     <id>http://nidesky.github.io/2015/10/05/git笔记/</id>
     <published>2015-10-04T16:16:47.000Z</published>
-    <updated>2015-10-05T15:44:51.000Z</updated>
+    <updated>2015-10-05T15:50:13.000Z</updated>
     <content type="html"><![CDATA[<h1 id="git_操作笔记">git 操作笔记</h1><hr>
 <h2 id="常见操作">常见操作</h2><h3 id="初始化操作">初始化操作</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &#34;nidesky&#34;&#10;git config --global user.email &#34;nidesky@gmail.com&#34;&#10;# &#35774;&#32622;&#24573;&#30053;&#25991;&#20214;&#26435;&#38480;&#30340;&#20462;&#25913;&#10;git config core.filemode false&#10;``` &#10;&#10;### &#21019;&#24314;&#20179;&#24211;&#10;&#10;```shell&#10;# &#21019;&#24314;&#19968;&#20010;&#31354;&#30340;&#20179;&#24211;&#10;git init&#10;&#10;# &#25110;&#32773;&#20811;&#38534;&#19968;&#20010;&#32447;&#19978;&#24050;&#26377;&#30340;&#20179;&#24211;&#10;git clone https://github.com/symfony/symfony.git</span><br></pre></td></tr></table></figure>
 <h3 id="添加文件">添加文件</h3><p>将 <code>工作区</code> 文件添加到 <code>暂存区(Staged)</code>。</p>
