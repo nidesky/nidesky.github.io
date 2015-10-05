@@ -26,7 +26,7 @@
 
 
 
-  <meta name="keywords" content="api,dingo,translation," />
+  <meta name="keywords" content="api,dingo,laravel,translation," />
 
 
 
@@ -37,37 +37,37 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="dingo/api wiki
+<meta name="description" content="dingo/api wiki (未校正)
 Dingo Api 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 API 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。
 安装前提环境:
 
 Laravel 5.1 + 或者 Lumen 5.1 +
 PHP 5.5.9 +
 
-你首先要在你的项目中修改 composer.json 文件，然后运行 composer updat">
+你首先要在你的项目中修改 composer.json 文件，然后运行 composer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="dingo/api">
 <meta property="og:url" content="http://nidesky.github.io/2015/09/05/dingo-api/index.html">
 <meta property="og:site_name" content="丁俊斌的博客">
-<meta property="og:description" content="dingo/api wiki
+<meta property="og:description" content="dingo/api wiki (未校正)
 Dingo Api 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 API 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。
 安装前提环境:
 
 Laravel 5.1 + 或者 Lumen 5.1 +
 PHP 5.5.9 +
 
-你首先要在你的项目中修改 composer.json 文件，然后运行 composer updat">
-<meta property="og:updated_time" content="2015-09-25T17:12:42.000Z">
+你首先要在你的项目中修改 composer.json 文件，然后运行 composer">
+<meta property="og:updated_time" content="2015-10-05T17:06:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dingo/api">
-<meta name="twitter:description" content="dingo/api wiki
+<meta name="twitter:description" content="dingo/api wiki (未校正)
 Dingo Api 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 API 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。
 安装前提环境:
 
 Laravel 5.1 + 或者 Lumen 5.1 +
 PHP 5.5.9 +
 
-你首先要在你的项目中修改 composer.json 文件，然后运行 composer updat">
+你首先要在你的项目中修改 composer.json 文件，然后运行 composer">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -212,7 +212,7 @@ PHP 5.5.9 +
       
 
       
-        <span itemprop="articleBody"><h1 id="dingo/api_wiki"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a></h1><hr>
+        <span itemprop="articleBody"><h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
 <p><code>Dingo Api</code> 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 <code>API</code> 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。</p>
 <h2 id="安装">安装</h2><p>前提环境:</p>
 <ul>
@@ -369,7 +369,13 @@ PHP 5.5.9 +
 <h3 id="表单请求">表单请求</h3><p>如果你使用的是表单请求，那么你需要继承 <code>API</code> 表单请求的基类，或者你自己实现它。 <code>API</code> 表单请求的基类将会检查看看传入的请求是不是针对 <code>API</code> 的， 如果是的话，那么如果验证失败，他会抛出一个异常 <code>Dingo\Api\Exception\ValidationHttpException</code>。</p>
 <p>这个异常将会被包正确的呈现，并会返回错误响应。</p>
 <p>如果你更喜欢实现你自己的表单请求，你必须重载 <code>failedValidation</code> 和 <code>failedAuthorization</code> 方法。这些方法必须抛出一个上面提到的异常，而没有 <code>Laravel</code> 抛出的 <code>HTTP</code> 异常响应。</p>
-<h2 id="转换器">转换器</h2><p><strong><em>未完待续。。。</em></strong></p>
+<h2 id="转换器">转换器</h2><p>转换器可以让你轻松地统一的将对象转换成一个数组。通过一个转换器，你可以转换整形和布尔型变量，也包括分页结果和嵌套关系等。</p>
+<h3 id="术语_(Terminology)">术语 (Terminology)</h3><p><code>转换器(transformer)</code> 在本章节中会被大量使用。值得一提的是下列术语在本章节中被用到的含义。</p>
+<ul>
+<li><code>转换层(transformation layer)</code> 是准备和处理转换器的层。</li>
+<li>转换器是一个类，将接受原生数据，并按照设定的格式返回一个数组。转换器是在转换层中工作的。</li>
+</ul>
+<p><strong><em>未完待续。。。</em></strong></p>
 </span>
       
     </div>
@@ -381,6 +387,8 @@ PHP 5.5.9 +
             <a href="/tags/api/" rel="tag">#api</a>
           
             <a href="/tags/dingo/" rel="tag">#dingo</a>
+          
+            <a href="/tags/laravel/" rel="tag">#laravel</a>
           
             <a href="/tags/translation/" rel="tag">#translation</a>
           
@@ -518,7 +526,7 @@ PHP 5.5.9 +
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dingo/api_wiki"><span class="nav-number">1.</span> <span class="nav-text">dingo/api wiki</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Laravel"><span class="nav-number">1.1.1.</span> <span class="nav-text">Laravel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lumen"><span class="nav-number">1.1.2.</span> <span class="nav-text">Lumen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Facades"><span class="nav-number">1.1.3.</span> <span class="nav-text">Facades</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准树_(Standards_Tree)"><span class="nav-number">1.2.1.</span> <span class="nav-text">标准树 (Standards Tree)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子类型_(Subtype)"><span class="nav-number">1.2.2.</span> <span class="nav-text">子类型 (Subtype)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前缀和子域名_(Prefixes_and_Subdomains)"><span class="nav-number">1.2.3.</span> <span class="nav-text">前缀和子域名 (Prefixes and Subdomains)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本_(Version)"><span class="nav-number">1.2.4.</span> <span class="nav-text">版本 (Version)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名称_(Name)"><span class="nav-number">1.2.5.</span> <span class="nav-text">名称 (Name)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件请求_(Conditional_Requests)"><span class="nav-number">1.2.6.</span> <span class="nav-text">条件请求 (Conditional Requests)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#严格模式_(Strict_Mode)"><span class="nav-number">1.2.7.</span> <span class="nav-text">严格模式 (Strict Mode)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#认证提供者(Authentication_Providers)"><span class="nav-number">1.2.8.</span> <span class="nav-text">认证提供者(Authentication Providers)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节流_/_访问频率限制(Throttling_/_Rate_Limiting)"><span class="nav-number">1.2.9.</span> <span class="nav-text">节流 / 访问频率限制(Throttling / Rate Limiting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应转换器(Response_Transformer)"><span class="nav-number">1.2.10.</span> <span class="nav-text">响应转换器(Response Transformer)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应格式(Response_Formats)"><span class="nav-number">1.2.11.</span> <span class="nav-text">响应格式(Response Formats)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误格式(Error_Format)"><span class="nav-number">1.2.12.</span> <span class="nav-text">错误格式(Error Format)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调试模式(Debug_Mode)"><span class="nav-number">1.2.13.</span> <span class="nav-text">调试模式(Debug Mode)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建_API_端"><span class="nav-number">1.3.</span> <span class="nav-text">创建 API 端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#版本组"><span class="nav-number">1.3.1.</span> <span class="nav-text">版本组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建终端"><span class="nav-number">1.3.2.</span> <span class="nav-text">创建终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由命名和生成链接"><span class="nav-number">1.3.3.</span> <span class="nav-text">路由命名和生成链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制台中查看路由"><span class="nav-number">1.3.4.</span> <span class="nav-text">控制台中查看路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应"><span class="nav-number">1.4.</span> <span class="nav-text">响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#响应生成器"><span class="nav-number">1.4.1.</span> <span class="nav-text">响应生成器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个单独记录的响应"><span class="nav-number">1.4.2.</span> <span class="nav-text">一个单独记录的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回记录集合的响应"><span class="nav-number">1.4.3.</span> <span class="nav-text">返回记录集合的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回分页的响应"><span class="nav-number">1.4.4.</span> <span class="nav-text">返回分页的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空响应"><span class="nav-number">1.4.5.</span> <span class="nav-text">空响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#已创建响应"><span class="nav-number">1.4.6.</span> <span class="nav-text">已创建响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误响应"><span class="nav-number">1.4.7.</span> <span class="nav-text">错误响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加额外的头信息"><span class="nav-number">1.4.8.</span> <span class="nav-text">添加额外的头信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加_Meta_数据"><span class="nav-number">1.4.9.</span> <span class="nav-text">添加 Meta 数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置响应状态"><span class="nav-number">1.4.10.</span> <span class="nav-text">设置响应状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义响应格式"><span class="nav-number">1.4.11.</span> <span class="nav-text">自定义响应格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变换和变换时间_(Morphing_And_Morphed_Events)"><span class="nav-number">1.4.12.</span> <span class="nav-text">变换和变换时间 (Morphing And Morphed Events)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误和错误响应"><span class="nav-number">1.5.</span> <span class="nav-text">错误和错误响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资源异常"><span class="nav-number">1.5.1.</span> <span class="nav-text">资源异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义_HTTP_异常"><span class="nav-number">1.5.2.</span> <span class="nav-text">自定义 HTTP 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义异常响应"><span class="nav-number">1.5.3.</span> <span class="nav-text">自定义异常响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单请求"><span class="nav-number">1.5.4.</span> <span class="nav-text">表单请求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换器"><span class="nav-number">1.6.</span> <span class="nav-text">转换器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dingo/api_wiki_(未校正)"><span class="nav-number">1.</span> <span class="nav-text">dingo/api wiki (未校正)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Laravel"><span class="nav-number">1.1.1.</span> <span class="nav-text">Laravel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lumen"><span class="nav-number">1.1.2.</span> <span class="nav-text">Lumen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Facades"><span class="nav-number">1.1.3.</span> <span class="nav-text">Facades</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准树_(Standards_Tree)"><span class="nav-number">1.2.1.</span> <span class="nav-text">标准树 (Standards Tree)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子类型_(Subtype)"><span class="nav-number">1.2.2.</span> <span class="nav-text">子类型 (Subtype)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前缀和子域名_(Prefixes_and_Subdomains)"><span class="nav-number">1.2.3.</span> <span class="nav-text">前缀和子域名 (Prefixes and Subdomains)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本_(Version)"><span class="nav-number">1.2.4.</span> <span class="nav-text">版本 (Version)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名称_(Name)"><span class="nav-number">1.2.5.</span> <span class="nav-text">名称 (Name)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件请求_(Conditional_Requests)"><span class="nav-number">1.2.6.</span> <span class="nav-text">条件请求 (Conditional Requests)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#严格模式_(Strict_Mode)"><span class="nav-number">1.2.7.</span> <span class="nav-text">严格模式 (Strict Mode)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#认证提供者(Authentication_Providers)"><span class="nav-number">1.2.8.</span> <span class="nav-text">认证提供者(Authentication Providers)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节流_/_访问频率限制(Throttling_/_Rate_Limiting)"><span class="nav-number">1.2.9.</span> <span class="nav-text">节流 / 访问频率限制(Throttling / Rate Limiting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应转换器(Response_Transformer)"><span class="nav-number">1.2.10.</span> <span class="nav-text">响应转换器(Response Transformer)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应格式(Response_Formats)"><span class="nav-number">1.2.11.</span> <span class="nav-text">响应格式(Response Formats)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误格式(Error_Format)"><span class="nav-number">1.2.12.</span> <span class="nav-text">错误格式(Error Format)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调试模式(Debug_Mode)"><span class="nav-number">1.2.13.</span> <span class="nav-text">调试模式(Debug Mode)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建_API_端"><span class="nav-number">1.3.</span> <span class="nav-text">创建 API 端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#版本组"><span class="nav-number">1.3.1.</span> <span class="nav-text">版本组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建终端"><span class="nav-number">1.3.2.</span> <span class="nav-text">创建终端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由命名和生成链接"><span class="nav-number">1.3.3.</span> <span class="nav-text">路由命名和生成链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制台中查看路由"><span class="nav-number">1.3.4.</span> <span class="nav-text">控制台中查看路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应"><span class="nav-number">1.4.</span> <span class="nav-text">响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#响应生成器"><span class="nav-number">1.4.1.</span> <span class="nav-text">响应生成器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个单独记录的响应"><span class="nav-number">1.4.2.</span> <span class="nav-text">一个单独记录的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回记录集合的响应"><span class="nav-number">1.4.3.</span> <span class="nav-text">返回记录集合的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回分页的响应"><span class="nav-number">1.4.4.</span> <span class="nav-text">返回分页的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空响应"><span class="nav-number">1.4.5.</span> <span class="nav-text">空响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#已创建响应"><span class="nav-number">1.4.6.</span> <span class="nav-text">已创建响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误响应"><span class="nav-number">1.4.7.</span> <span class="nav-text">错误响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加额外的头信息"><span class="nav-number">1.4.8.</span> <span class="nav-text">添加额外的头信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加_Meta_数据"><span class="nav-number">1.4.9.</span> <span class="nav-text">添加 Meta 数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置响应状态"><span class="nav-number">1.4.10.</span> <span class="nav-text">设置响应状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义响应格式"><span class="nav-number">1.4.11.</span> <span class="nav-text">自定义响应格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变换和变换时间_(Morphing_And_Morphed_Events)"><span class="nav-number">1.4.12.</span> <span class="nav-text">变换和变换时间 (Morphing And Morphed Events)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误和错误响应"><span class="nav-number">1.5.</span> <span class="nav-text">错误和错误响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资源异常"><span class="nav-number">1.5.1.</span> <span class="nav-text">资源异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义_HTTP_异常"><span class="nav-number">1.5.2.</span> <span class="nav-text">自定义 HTTP 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义异常响应"><span class="nav-number">1.5.3.</span> <span class="nav-text">自定义异常响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单请求"><span class="nav-number">1.5.4.</span> <span class="nav-text">表单请求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换器"><span class="nav-number">1.6.</span> <span class="nav-text">转换器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#术语_(Terminology)"><span class="nav-number">1.6.1.</span> <span class="nav-text">术语 (Terminology)</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

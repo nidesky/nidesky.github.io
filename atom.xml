@@ -100,8 +100,8 @@
     <link href="http://nidesky.github.io/2015/09/05/dingo-api/"/>
     <id>http://nidesky.github.io/2015/09/05/dingo-api/</id>
     <published>2015-09-05T03:07:14.000Z</published>
-    <updated>2015-09-25T17:12:42.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="dingo/api_wiki"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a></h1><hr>
+    <updated>2015-10-05T17:06:01.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
 <p><code>Dingo Api</code> 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 <code>API</code> 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。</p>
 <h2 id="安装">安装</h2><p>前提环境:</p>
 <ul>
@@ -258,16 +258,24 @@
 <h3 id="表单请求">表单请求</h3><p>如果你使用的是表单请求，那么你需要继承 <code>API</code> 表单请求的基类，或者你自己实现它。 <code>API</code> 表单请求的基类将会检查看看传入的请求是不是针对 <code>API</code> 的， 如果是的话，那么如果验证失败，他会抛出一个异常 <code>Dingo\Api\Exception\ValidationHttpException</code>。</p>
 <p>这个异常将会被包正确的呈现，并会返回错误响应。</p>
 <p>如果你更喜欢实现你自己的表单请求，你必须重载 <code>failedValidation</code> 和 <code>failedAuthorization</code> 方法。这些方法必须抛出一个上面提到的异常，而没有 <code>Laravel</code> 抛出的 <code>HTTP</code> 异常响应。</p>
-<h2 id="转换器">转换器</h2><p><strong><em>未完待续。。。</em></strong></p>
+<h2 id="转换器">转换器</h2><p>转换器可以让你轻松地统一的将对象转换成一个数组。通过一个转换器，你可以转换整形和布尔型变量，也包括分页结果和嵌套关系等。</p>
+<h3 id="术语_(Terminology)">术语 (Terminology)</h3><p><code>转换器(transformer)</code> 在本章节中会被大量使用。值得一提的是下列术语在本章节中被用到的含义。</p>
+<ul>
+<li><code>转换层(transformation layer)</code> 是准备和处理转换器的层。</li>
+<li>转换器是一个类，将接受原生数据，并按照设定的格式返回一个数组。转换器是在转换层中工作的。</li>
+</ul>
+<p><strong><em>未完待续。。。</em></strong></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="dingo/api_wiki"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a></h1><hr>
-<p><code>Ding]]>
+    <![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
+<]]>
     </summary>
     
       <category term="api" scheme="http://nidesky.github.io/tags/api/"/>
     
       <category term="dingo" scheme="http://nidesky.github.io/tags/dingo/"/>
+    
+      <category term="laravel" scheme="http://nidesky.github.io/tags/laravel/"/>
     
       <category term="translation" scheme="http://nidesky.github.io/tags/translation/"/>
     
