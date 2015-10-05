@@ -38,21 +38,18 @@
 
 
 <meta name="description" content="git 操作笔记
-常见操作备忘删除远程分支查看所有分支1git branch -a
-删除远程分支 demo1git branch -r -d origin/demo&amp;#10;git push origin :demo">
+常见操作初始化操作1git config --global user.name &amp;#34;nidesky&amp;#34;&amp;#10;git config --global user.email &amp;#34;nidesky@gmail.com&amp;#34;&amp;#10;# &amp;#35774;&amp;#32622;&amp;#24573;&amp;#30053;&amp;#25991;&amp;#20214;&amp;#26435;&amp;#38480;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git笔记">
 <meta property="og:url" content="http://nidesky.github.io/2015/10/05/git笔记/index.html">
 <meta property="og:site_name" content="丁俊斌的博客">
 <meta property="og:description" content="git 操作笔记
-常见操作备忘删除远程分支查看所有分支1git branch -a
-删除远程分支 demo1git branch -r -d origin/demo&amp;#10;git push origin :demo">
-<meta property="og:updated_time" content="2015-10-04T16:20:18.000Z">
+常见操作初始化操作1git config --global user.name &amp;#34;nidesky&amp;#34;&amp;#10;git config --global user.email &amp;#34;nidesky@gmail.com&amp;#34;&amp;#10;# &amp;#35774;&amp;#32622;&amp;#24573;&amp;#30053;&amp;#25991;&amp;#20214;&amp;#26435;&amp;#38480;">
+<meta property="og:updated_time" content="2015-10-05T15:44:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git笔记">
 <meta name="twitter:description" content="git 操作笔记
-常见操作备忘删除远程分支查看所有分支1git branch -a
-删除远程分支 demo1git branch -r -d origin/demo&amp;#10;git push origin :demo">
+常见操作初始化操作1git config --global user.name &amp;#34;nidesky&amp;#34;&amp;#10;git config --global user.email &amp;#34;nidesky@gmail.com&amp;#34;&amp;#10;# &amp;#35774;&amp;#32622;&amp;#24573;&amp;#30053;&amp;#25991;&amp;#20214;&amp;#26435;&amp;#38480;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -198,9 +195,37 @@
 
       
         <span itemprop="articleBody"><h1 id="git_操作笔记">git 操作笔记</h1><hr>
-<h2 id="常见操作">常见操作</h2><h2 id="备忘">备忘</h2><h3 id="删除远程分支">删除远程分支</h3><p>查看所有分支<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure></p>
-<p>删除远程分支 <code>demo</code><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r -d origin/demo&#10;git push origin :demo</span><br></pre></td></tr></table></figure></p>
-</span>
+<h2 id="常见操作">常见操作</h2><h3 id="初始化操作">初始化操作</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &#34;nidesky&#34;&#10;git config --global user.email &#34;nidesky@gmail.com&#34;&#10;# &#35774;&#32622;&#24573;&#30053;&#25991;&#20214;&#26435;&#38480;&#30340;&#20462;&#25913;&#10;git config core.filemode false&#10;``` &#10;&#10;### &#21019;&#24314;&#20179;&#24211;&#10;&#10;```shell&#10;# &#21019;&#24314;&#19968;&#20010;&#31354;&#30340;&#20179;&#24211;&#10;git init&#10;&#10;# &#25110;&#32773;&#20811;&#38534;&#19968;&#20010;&#32447;&#19978;&#24050;&#26377;&#30340;&#20179;&#24211;&#10;git clone https://github.com/symfony/symfony.git</span><br></pre></td></tr></table></figure>
+<h3 id="添加文件">添加文件</h3><p>将 <code>工作区</code> 文件添加到 <code>暂存区(Staged)</code>。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#28155;&#21152;&#19968;&#20010;&#25991;&#20214;&#10;git add README.md&#10;&#10;# &#28155;&#21152;&#22810;&#20010;&#25991;&#20214;&#10;git add file1 file2 file3&#10;&#10;# &#28155;&#21152;&#25152;&#26377;&#25991;&#20214;&#10;git add .&#10;# &#25110;&#32773;&#10;git add -A&#10;# &#25110;&#32773; &#10;git add --all</span><br></pre></td></tr></table></figure>
+<h3 id="提交文件">提交文件</h3><p>将暂存区的文件提交到 <code>当前分支</code>（默认是 <code>master</code> 分支）。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &#39;project init in 2015-10-05 22:55:27&#39;</span><br></pre></td></tr></table></figure>
+<h3 id="查看历史记录">查看历史记录</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log&#10;&#10;# &#22914;&#26524;&#35273;&#24471;&#25552;&#20132;&#21382;&#21490;&#26174;&#31034;&#30340;&#24456;&#20081;&#65292;&#37027;&#20040;&#21487;&#20197;&#23558;&#27599;&#27425;&#25552;&#20132;&#21482;&#26174;&#31034;&#19968;&#34892;&#10;git log --pretty=oneline</span><br></pre></td></tr></table></figure>
+<h3 id="版本回滚">版本回滚</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#22238;&#36864;&#21040;&#19978;&#19968;&#20010;&#29256;&#26412;&#10;git reset --hard HEAD^&#10;&#10;# &#20250;&#36864;&#21040;&#21069;100&#20010;&#29256;&#26412;&#10;git reset --hard HEAD~100&#10;&#10;# &#22238;&#28378;&#20043;&#21518;&#65292;git log &#20250;&#22833;&#21435;&#26368;&#26032;&#29256;&#26412;&#21644;&#22238;&#28378;&#29256;&#26412;&#20043;&#38388;&#30340;&#29256;&#26412;&#65292;&#20294;&#26159;&#20063;&#21487;&#20197;&#26597;&#21040;&#10;git reflog&#10;&#10;# &#22238;&#28378;&#21040;&#25351;&#23450;&#30340;&#29256;&#26412;&#21495;(&#21482;&#38656;&#35201;&#29256;&#26412;&#30340;&#21069;&#20960;&#20301;&#23601;&#21487;&#20197;)&#10;git reset --hard 1f05714</span><br></pre></td></tr></table></figure>
+<h3 id="撤销工作区修改">撤销工作区修改</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- README.md</span><br></pre></td></tr></table></figure>
+<p>有两种情况可以使用这种方法：</p>
+<ol>
+<li>README.md 修改后，还没有添加到暂存区，撤消后恢复成版本库中的状态。</li>
+<li>已经放入到暂存区，又进行了修改，那么撤消后将恢复成加入暂存区之后的状态。</li>
+</ol>
+<h3 id="将本地仓库与远程仓库关联">将本地仓库与远程仓库关联</h3><ol>
+<li>新建本地仓库与远程关联</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init&#10;git add README.md&#10;git commit -m &#39;first commit&#39;&#10;git remote add origin https://github.com/symfony/symfony.git&#10;git push -u origin master</span><br></pre></td></tr></table></figure>
+<ol>
+<li>已存在的本地仓库与远程关联</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/symfony/symfony.git&#10;git push -u origin master</span><br></pre></td></tr></table></figure>
+<h3 id="提交到远程仓库">提交到远程仓库</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#25552;&#20132;&#21040;&#36828;&#31243;&#30340; master &#20998;&#25903;&#10;git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="创建分支和查看分支">创建分支和查看分支</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;# &#21019;&#24314; dev &#20998;&#25903;&#10;git branch dev&#10;&#10;# &#20999;&#25442;&#21040; dev &#20998;&#25903;&#10;git checkout dev&#10;&#10;# &#21019;&#24314;&#24182;&#20999;&#25442;&#21040; dev &#20998;&#25903;&#10;git checkout -b dev&#10;&#10;# &#26597;&#30475;&#24403;&#21069;&#20998;&#25903;&#10;git branch</span><br></pre></td></tr></table></figure>
+<h3 id="合并分支">合并分支</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># &#20999;&#25442;&#22238; master &#20998;&#25903;&#10;git checkout master&#10;&#10;# &#21512;&#24182; dev &#20998;&#25903;&#21040; master&#10;git merge dev</span><br></pre></td></tr></table></figure>
+<h3 id="删除分支">删除分支</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
+<p>通常合并分支时，git一般使用”Fast forward”模式，在这种模式下，删除分支后，会丢掉分支信息，现在我们来使用带参数 –no-ff来禁用”Fast forward”模式。这样我们就可以合并分支后，在主分支保留开发分支的版本信息。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --no-ff -m &#34;&#21512;&#24182;&#27880;&#37322;&#34; dev</span><br></pre></td></tr></table></figure>
+<h2 id="备忘">备忘</h2><h3 id="删除远程分支">删除远程分支</h3><p>查看所有分支。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+<p>删除远程分支 <code>demo</code>。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r -d origin/demo&#10;git push origin :demo</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -342,7 +367,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git_操作笔记"><span class="nav-number">1.</span> <span class="nav-text">git 操作笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见操作"><span class="nav-number">1.1.</span> <span class="nav-text">常见操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘"><span class="nav-number">1.2.</span> <span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支"><span class="nav-number">1.2.1.</span> <span class="nav-text">删除远程分支</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git_操作笔记"><span class="nav-number">1.</span> <span class="nav-text">git 操作笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见操作"><span class="nav-number">1.1.</span> <span class="nav-text">常见操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化操作"><span class="nav-number">1.1.1.</span> <span class="nav-text">初始化操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">添加文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交文件"><span class="nav-number">1.1.3.</span> <span class="nav-text">提交文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史记录"><span class="nav-number">1.1.4.</span> <span class="nav-text">查看历史记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本回滚"><span class="nav-number">1.1.5.</span> <span class="nav-text">版本回滚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销工作区修改"><span class="nav-number">1.1.6.</span> <span class="nav-text">撤销工作区修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将本地仓库与远程仓库关联"><span class="nav-number">1.1.7.</span> <span class="nav-text">将本地仓库与远程仓库关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交到远程仓库"><span class="nav-number">1.1.8.</span> <span class="nav-text">提交到远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分支和查看分支"><span class="nav-number">1.1.9.</span> <span class="nav-text">创建分支和查看分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并分支"><span class="nav-number">1.1.10.</span> <span class="nav-text">合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除分支"><span class="nav-number">1.1.11.</span> <span class="nav-text">删除分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘"><span class="nav-number">1.2.</span> <span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支"><span class="nav-number">1.2.1.</span> <span class="nav-text">删除远程分支</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
