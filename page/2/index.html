@@ -195,8 +195,16 @@
 
       
         
-          <span itemprop="articleBody"><h3 id="1-_添加防火墙规则">1. 添加防火墙规则</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/iptables&#10;&#10;# &#28155;&#21152;&#19979;&#38754;&#36825;&#34892;&#10;-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT</span><br></pre></td></tr></table></figure>
-<h3 id="2-_重启防火墙">2. 重启防火墙</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables restart</span><br></pre></td></tr></table></figure></span>
+          <span itemprop="articleBody">
+            
+            1. 添加防火墙规则1vi /etc/sysconfig/iptables&#10;&#10;# &#28155;&#21152;&#19979;&#38754;&#36825;&#34892;&#10;-A INPUT -m state --state NEW -m tcp -p tcp --dp
+            ...
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/08/29/Centos-防火墙iptables-开启-3306端口/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
