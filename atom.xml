@@ -100,7 +100,7 @@
     <link href="http://nidesky.github.io/2015/09/05/dingo-api/"/>
     <id>http://nidesky.github.io/2015/09/05/dingo-api/</id>
     <published>2015-09-05T03:07:14.000Z</published>
-    <updated>2015-10-05T17:06:01.000Z</updated>
+    <updated>2015-10-07T15:43:22.000Z</updated>
     <content type="html"><![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
 <p><code>Dingo Api</code> 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 <code>API</code> 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。</p>
 <h2 id="安装">安装</h2><p>前提环境:</p>
@@ -264,7 +264,21 @@
 <li><code>转换层(transformation layer)</code> 是准备和处理转换器的层。</li>
 <li>转换器是一个类，将接受原生数据，并按照设定的格式返回一个数组。转换器是在转换层中工作的。</li>
 </ul>
-<p><strong><em>未完待续。。。</em></strong></p>
+<h3 id="使用转换器">使用转换器</h3><p>有以下几种方法可以使用转换器</p>
+<h4 id="将一个类注册生成转换器">将一个类注册生成转换器</h4><p>当你讲一个给定的类注册成转换器的时候，你将可以直接从你的路由中返回那个给定的类(假设它可以被转换成一个数组)，他将会自动的通过转换器的处理。对于简单的 <code>API</code> 来说，这真是极好的。你可以在路由中使用模型(<code>model</code>)直接作为返回值。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app(<span class="string">'Dingo\Api\Transformer\Factory'</span>)-&gt;register(<span class="string">'User'</span>, <span class="string">'UserTransformer'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="使用响应构造器">使用响应构造器</h4><p>请参考 <a href="https://github.com/dingo/api/wiki/Responses#response-builder" target="_blank" rel="external"><code>响应构造器</code></a> 章节。</p>
+<h3 id="Fractal">Fractal</h3><p><a href="http://fractal.thephpleague.com/" target="_blank" rel="external"><code>Fractal</code></a> 是包里面默认的转换层。它有很多的功能，可以帮你保持数据的一致。</p>
+<p>要使用 <code>Fractal</code> 的话，建议你阅读其官网上的文档。</p>
+<h4 id="自动关联关系的贪婪加载">自动关联关系的贪婪加载</h4><p>当你使用 <code>Fractal</code> 的一些包括功能嵌入关系的特性时， 你应该确保它的命名与你模型中的关系名相同。这个包将会自动地贪婪加载他们的关联关系在你的查询结果中。</p>
+<h4 id="高级配置">高级配置</h4><p><code>Fractal</code> 被注册为默认的转换层，并带有一些默认的配置。要配置包括键和定义嵌入的关联关系的分隔，你必须在一个服务提供者或启动文件中手动的实例化 <code>Dingo\Api\Transformer\Adapter\Fractal</code>.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$this</span>-&gt;app[<span class="string">'Dingo\Api\Transformer\Factory'</span>]-&gt;setTransformer(<span class="function"><span class="keyword">function</span> <span class="params">(<span class="variable">$app</span>)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">new</span> Dingo\Api\Transformer\Adapter\Fractal(<span class="keyword">new</span> League\Fractal\Manager, <span class="string">'include'</span>, <span class="string">','</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果你是用的是 <code>Lumen</code> ， 那么你可以在你的启动文件中这样添加。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app(<span class="string">'Dingo\Api\Transformer\Factory'</span>)-&gt;setTransformer(<span class="function"><span class="keyword">function</span> <span class="params">(<span class="variable">$app</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Dingo\Api\Transformer\Adapter\Fractal(<span class="keyword">new</span> League\Fractal\Manager, <span class="string">'include'</span>, <span class="string">','</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="响应构造器的高级用法">响应构造器的高级用法</h4><p>在控制其中和响应构造器一起使用 <code>Fractal</code> 来返回数据是很不错的方式。</p>
+<p>条，集合和分页方法在响应构造器中都接受一些额外的参数，这通常用来定制 <code>Fractal</code>。</p>
+<h5 id="资源键">资源键</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="variable">$this</span>-&gt;item(<span class="variable">$user</span>, <span class="keyword">new</span> UserTransformer, [<span class="string">'key'</span> =&gt; <span class="string">'user'</span>]);</span><br></pre></td></tr></table></figure>
+<h5 id="利用回调">利用回调</h5><p><strong><em>未完待续。。。</em></strong></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
