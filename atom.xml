@@ -100,7 +100,7 @@
     <link href="http://nidesky.github.io/2015/09/05/dingo-api/"/>
     <id>http://nidesky.github.io/2015/09/05/dingo-api/</id>
     <published>2015-09-05T03:07:14.000Z</published>
-    <updated>2015-10-09T15:56:59.000Z</updated>
+    <updated>2015-10-09T15:59:16.000Z</updated>
     <content type="html"><![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
 <p><code>Dingo Api</code> 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 <code>API</code> 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。</p>
 <h2 id="安装">安装</h2><p>前提环境:</p>
@@ -288,7 +288,7 @@
 <p>这个 <code>transform</code> 方法是唯一必须的方法，你可以任意添加其他你需要的方法。 <code>transform</code> 方法是为了获得 <code>$response</code>, 然后把它连同 <code>$transformer</code> 给你的转换层。你的转换层应该返回一个 <code>transform</code> 方法返回的一个数组。当然，你可以在这个列中做了所有工作，这样你的转换层会显得非常简单。</p>
 <p><code>$binding</code> 参数在你的转换层中的绝大部分特性中非常有用。就像添加一个额外数据或者允许其他的开发者通过回调函数在你的转换层中进行交互。</p>
 <p><code>$request</code> 参数是当前被执行的 <code>HTTP</code> 请求，当你的转换层需要查询字符值或其他关联数据时非常有用。</p>
-<p><strong><em>未完待续。。。</em></strong></p>
+<h2 id="认证">认证</h2><p><strong><em>未完待续。。。</em></strong></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
