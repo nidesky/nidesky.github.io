@@ -100,7 +100,7 @@
     <link href="http://nidesky.github.io/2015/09/05/dingo-api/"/>
     <id>http://nidesky.github.io/2015/09/05/dingo-api/</id>
     <published>2015-09-05T03:07:14.000Z</published>
-    <updated>2015-10-12T15:38:52.000Z</updated>
+    <updated>2015-10-13T15:55:17.000Z</updated>
     <content type="html"><![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
 <p><code>Dingo Api</code> 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 <code>API</code> 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。</p>
 <h2 id="安装">安装</h2><p>前提环境:</p>
@@ -403,7 +403,7 @@
 <p>如果你不向往使用 Postmac， 你可以使用命令行工具，比如 cURL。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v -H &#34;Accept: application/vnd.YOUR_SUBTYPE.v1+json&#34; http://example.app/users</span><br></pre></td></tr></table></figure>
 <p>如果你开启了严格模式，然后你传入了一个无效的 <code>Accept</code> 头，一个未处理的 <code>Symfony\Component\HttpKernel\Exception\BadRequestHttpException</code> 异常将会被抛出。</p>
-<p><strong><em>未完待续。。。</em></strong></p>
+<h2 id="API_蓝图文档">API 蓝图文档</h2><p><strong><em>未完待续。。。</em></strong></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
