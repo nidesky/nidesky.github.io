@@ -100,7 +100,7 @@
     <link href="http://nidesky.github.io/2015/09/05/dingo-api/"/>
     <id>http://nidesky.github.io/2015/09/05/dingo-api/</id>
     <published>2015-09-05T03:07:14.000Z</published>
-    <updated>2015-10-13T17:06:15.000Z</updated>
+    <updated>2015-10-14T14:19:31.000Z</updated>
     <content type="html"><![CDATA[<h1 id="dingo/api_wiki_(未校正)"><a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">dingo/api wiki</a> (未校正)</h1><hr>
 <p><code>Dingo Api</code> 包是为了给开发者提供一套可以轻松且快速开发出属于自己的 <code>API</code> 的工具。尽管这个包的目的是尽可能地灵活，但是它仍未能涵盖所有的情况，解决所有的问题。</p>
 <h2 id="安装">安装</h2><p>前提环境:</p>
@@ -445,6 +445,22 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Show all users</span><br><span class="line"> *</span><br><span class="line"> * Get a JSON representation of all the registered users.</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@Get</span>("/&#123;?page,limit&#125;")</span><br><span class="line"> * <span class="doctag">@Versions</span>(&#123;"v1"&#125;)</span><br><span class="line"> * <span class="doctag">@Parameters</span>(&#123;</span><br><span class="line"> *      <span class="doctag">@Parameter</span>("page", description="The page of results to view.", default=1),</span><br><span class="line"> *      <span class="doctag">@Parameter</span>("limit", description="The amount of results per page.", default=10)</span><br><span class="line"> * &#125;)</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>你也可以定义参数 <code>type</code> 以及他是否 <code>required</code>。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * <span class="doctag">@Parameters</span>(&#123;</span><br><span class="line"> *      <span class="doctag">@Parameter</span>("example", type="integer", required=true description="This is an example.", default=1)</span><br><span class="line"> * &#125;)</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="命令">命令</h2><p>这些命令是否有效取决于你是用的框架。下面是不同框架的命令的区别。</p>
+<p>Laravel : <code>api:routes</code>, <code>api:cache</code>, <code>api:docs</code></p>
+<p>Lumen : <code>api:docs</code></p>
+<h3 id="api:routes"><code>api:routes</code></h3><h4 id="仅在_Laravel_5-1_中有效">仅在 Laravel 5.1 中有效</h4><p>这个命令将会生成一个你的 API 路由的列表。这个命令和 Laravel 中的 <code>route:list</code> 非常相似。有两个过滤选项： <code>--versions</code> 和 <code>--scopes</code>&gt;</p>
+<h4 id="例子">例子</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php aritsan api:routes&#10;``` &#10;&#10;```shell&#10;php aritsan api:routes --versions v1</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php aritsan api:routes --scopes read_user_data --scoes write_user_data</span><br></pre></td></tr></table></figure>
+<p><code>api:cache</code></p>
+<h4 id="仅在_Laravel_5-1_中有效-1">仅在 Laravel 5.1 中有效</h4><p>这个命令将缓存你的 API 路由在你的主应用路由后面。当运行这个命令的时候， <code>route:cache</code> 命令将会自动运行， 所以不用在这个命令之后在执行一次。</p>
+<p>你的路由应该要么放在 <code>app?http/routes.php</code> 文件中，或者被包含在其他生效的缓存中。</p>
+<h4 id="例子-1">例子</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan api:cache</span><br></pre></td></tr></table></figure>
+<h3 id="api:docs"><code>api:docs</code></h3><h4 id="仅在_Laravel_5-1_+_和_Lumen_5-1_+_中生效">仅在 Laravel 5.1 + 和 Lumen 5.1 + 中生效</h4><p>这个命令将从你控制器中的注释生成文档到一个标准的 API 蓝图文档。获取更多如何在控制器中注释，请参考 <a href="https://github.com/dingo/api/wiki/API-Blueprint-Documentation" target="_blank" rel="external"><code>API Blueprint Documentation</code></a> 章节。</p>
+<p>这个命令默认会输出生成的文档到 <code>stdout</code>,这里你可以传输他到一个文件或者推送到一个服务。</p>
+<h4 id="例子-2">例子</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan api:docs --name Example --use-version v2</span><br></pre></td></tr></table></figure>
+<p>直接输出到文件 <code>--output-file</code>.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan api:docs --name Example --use-version v2 --outpu-file /path/to/documentation.md</span><br></pre></td></tr></table></figure>
+<p>为了避免手动定义名称和版本，你可以在你的配置文件中或者环境文件中定义默认至。更多请参考 [<code>configuration</code>]<a href="https://github.com/dingo/api/wiki/Configuration√" target="_blank" rel="external">https://github.com/dingo/api/wiki/Configuration√</a>) 章节。</p>
 <p><strong><em>未完待续。。。</em></strong></p>
 ]]></content>
     <summary type="html">
