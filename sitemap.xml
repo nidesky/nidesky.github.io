@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://nidesky.github.io/2015/10/24/mysql-%E4%B8%AD%E4%BD%BF%E7%94%A8-CASE-WHEN/</loc>
+    <lastmod>2015-10-23T17:54:04.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://nidesky.github.io/2015/10/24/Linux%E4%B8%8BMySQL5-6%E7%9A%84%E4%BF%AE%E6%94%B9%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E4%B8%BAUTF8/</loc>
     <lastmod>2015-10-23T16:55:31.000Z</lastmod>
   </url>

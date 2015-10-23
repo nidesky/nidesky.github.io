@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2015-10-23T16:55:31.000Z</updated>
+  <updated>2015-10-23T17:54:04.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[mysql 中使用 CASE WHEN]]></title>
+    <link href="http://nidesky.github.io/2015/10/24/mysql-%E4%B8%AD%E4%BD%BF%E7%94%A8-CASE-WHEN/"/>
+    <id>http://nidesky.github.io/2015/10/24/mysql-中使用-CASE-WHEN/</id>
+    <published>2015-10-23T17:27:12.000Z</published>
+    <updated>2015-10-23T17:54:04.000Z</updated>
+    <content type="html"><![CDATA[<p>首先建立表结构</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table test (&#10;id int not null AUTO_INCREMENT,&#10;type int not null,&#10;value int not null,&#10;primary key (id)&#10;);&#10; &#10;INSERT INTO test (type,value)VALUES(1,1),(2,2),(3,3),(4,4);</span><br></pre></td></tr></table></figure>
+<p>根据 type 的值， value 去不同的值，然后求和，如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select &#10;&#9;sum(case when type = 1 then value * 0.1 when type = 2 then value * 0.2 when type = 3 then value * 0.3 when type = 4 then value * 0.4) &#10;as total &#10;from test;</span><br></pre></td></tr></table></figure>
+<p>再比如说，如下表结构:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table test1(&#10;id int not null AUTO_INCREMENT,&#10;name varchar(50) not null,&#10;birthday date not null,&#10;primary key (id)&#10;)&#10; &#10;INSERT INTO test1(name,birthday) VALUES&#10;(&#39;ll&#39;,&#39;1991-11-01&#39;),(&#39;yy&#39;,&#39;2000-11-01&#39;),(&#39;ss&#39;,&#39;2008-11-01&#39;),(&#39;dd&#39;,&#39;2010-11-01&#39;);</span><br></pre></td></tr></table></figure>
+<p>如下查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">select </span><br><span class="line">	<span class="keyword">name</span>, </span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> birthday &lt; <span class="string">'1995-11-01'</span> <span class="keyword">then</span> <span class="string">'old'</span> <span class="keyword">when</span> birthday &lt; <span class="string">'2000-11-01'</span> <span class="keyword">then</span> <span class="string">'ok'</span> <span class="keyword">when</span> birthday &lt; <span class="string">'2011-11-01'</span> <span class="keyword">then</span> <span class="string">'young'</span> <span class="keyword">else</span> <span class="string">'too native'</span> <span class="keyword">end</span> </span><br><span class="line"><span class="keyword">as</span> hello </span><br><span class="line"><span class="keyword">from</span> test1;</span></span><br></pre></td></tr></table></figure>
+<p>SQL 中还有其他的判断语句， 如 IF 和 IFNULL, 如下表结构：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> test2 (</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> AUTO_INCREMENT,</span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">sex <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">primary <span class="keyword">key</span> (<span class="keyword">id</span>)</span><br><span class="line">);</span></span><br><span class="line"> </span><br><span class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> test2 (<span class="keyword">name</span>,sex) <span class="keyword">value</span>(<span class="string">'sdsd'</span>,<span class="number">1</span>),(<span class="string">'sdwe'</span>,<span class="number">2</span>);</span></span><br></pre></td></tr></table></figure>
+<p>如果使用 IF 如下查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">select </span><br><span class="line">	<span class="keyword">name</span> , <span class="keyword">if</span>(sex = <span class="number">1</span>, <span class="string">'male'</span>, <span class="string">'female'</span>) </span><br><span class="line"><span class="keyword">as</span> sex </span><br><span class="line"><span class="keyword">from</span> test2</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>IF(expr1,expr2,expr3)</p>
+<p>如果 expr1 是TRUE (expr1 &lt;&gt; 0 and expr1 &lt;&gt; NULL)，则 IF()的返回值为expr2; 否则返回值则为 expr3。IF() 的返回值为数字值或字符串值，具体情况视其所在语境而定。</p>
+<p>IFNULL(expr1,expr2)</p>
+<p>假如expr1 不为 NULL，则 IFNULL() 的返回值为 expr1; 否则其返回值为 expr2。IFNULL()的返回值是数字或是字符串，具体情况取决于其所使用的语境。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>首先建立表结构</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre>]]>
+    </summary>
+    
+      <category term="mysql" scheme="http://nidesky.github.io/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linux下MySQL5.6的修改字符集编码为UTF8]]></title>

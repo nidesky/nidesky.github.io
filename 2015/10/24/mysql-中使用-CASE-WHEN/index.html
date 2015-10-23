@@ -26,7 +26,7 @@
 
 
 
-  <meta name="keywords" content="laravel,packages,php," />
+  <meta name="keywords" content="mysql," />
 
 
 
@@ -37,25 +37,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
-2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
-运行命令1php artisan vendor:publish
-3.">
+<meta name="description" content="首先建立表结构
+1create table test (&amp;#10;id int not null AUTO_INCREMENT,&amp;#10;type int not null,&amp;#10;value int not null,&amp;#10;primary key (id)&amp;#10;);&amp;#10; &amp;#10;INSERT INTO test (type,value)VALUES(1,1),(2,2),(3,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Laravel 5.1 开发扩展包">
-<meta property="og:url" content="http://nidesky.github.io/2015/08/30/Laravel-5-1-开发扩展包/index.html">
+<meta property="og:title" content="mysql 中使用 CASE WHEN">
+<meta property="og:url" content="http://nidesky.github.io/2015/10/24/mysql-中使用-CASE-WHEN/index.html">
 <meta property="og:site_name" content="丁俊斌的博客">
-<meta property="og:description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
-2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
-运行命令1php artisan vendor:publish
-3.">
-<meta property="og:updated_time" content="2015-08-29T17:03:43.000Z">
+<meta property="og:description" content="首先建立表结构
+1create table test (&amp;#10;id int not null AUTO_INCREMENT,&amp;#10;type int not null,&amp;#10;value int not null,&amp;#10;primary key (id)&amp;#10;);&amp;#10; &amp;#10;INSERT INTO test (type,value)VALUES(1,1),(2,2),(3,">
+<meta property="og:updated_time" content="2015-10-23T17:54:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laravel 5.1 开发扩展包">
-<meta name="twitter:description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
-2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
-运行命令1php artisan vendor:publish
-3.">
+<meta name="twitter:title" content="mysql 中使用 CASE WHEN">
+<meta name="twitter:description" content="首先建立表结构
+1create table test (&amp;#10;id int not null AUTO_INCREMENT,&amp;#10;type int not null,&amp;#10;value int not null,&amp;#10;primary key (id)&amp;#10;);&amp;#10; &amp;#10;INSERT INTO test (type,value)VALUES(1,1),(2,2),(3,">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -65,7 +59,7 @@
   };
 </script>
 
-  <title> Laravel 5.1 开发扩展包 | 丁俊斌的博客 </title>
+  <title> mysql 中使用 CASE WHEN | 丁俊斌的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +157,7 @@
   <div id="posts" class="posts-expand">
     
 
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       
@@ -172,7 +166,7 @@
           
           
             
-              Laravel 5.1 开发扩展包
+              mysql 中使用 CASE WHEN
             
           
         </h1>
@@ -181,8 +175,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-30T00:58:11+08:00" content="2015-08-30">
-            2015-08-30
+          <time itemprop="dateCreated" datetime="2015-10-24T01:27:12+08:00" content="2015-10-24">
+            2015-10-24
           </time>
         </span>
 
@@ -200,11 +194,25 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="1-_安装_pingpong/workbench">1. 安装 <code>pingpong/workbench</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require pingpong/workbench</span><br></pre></td></tr></table></figure>
-<h3 id="2-_配置_pingpong/workbench">2. 配置 <code>pingpong/workbench</code></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 config/app.php 中的 providers 添加</span></span><br><span class="line">Pingpong\Workbench\WorkbenchServiceProvider</span><br></pre></td></tr></table></figure>
-<p>运行命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-_创建扩展包">3. 创建扩展包</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan workbench vendor/package&#10;php artisan workbench vendor/package --resources&#10;// php artisan workbench nidesky/sweet-alert</span><br></pre></td></tr></table></figure>
-<h3 id="4-_引入命名空间">4. 引入命名空间</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"autoload"</span>: &#123;</span><br><span class="line">    <span class="string">"classmap"</span>: [</span><br><span class="line">        <span class="string">"database"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"psr-4"</span>: &#123;</span><br><span class="line">        <span class="string">"App\\"</span>: <span class="string">"app/"</span>,</span><br><span class="line">+       <span class="string">"Nidesky\\SweetAlert\\"</span>: <span class="string">"workbench/nidesky/sweet-alert/src/Nidesky/SweetAlert"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><p>首先建立表结构</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table test (&#10;id int not null AUTO_INCREMENT,&#10;type int not null,&#10;value int not null,&#10;primary key (id)&#10;);&#10; &#10;INSERT INTO test (type,value)VALUES(1,1),(2,2),(3,3),(4,4);</span><br></pre></td></tr></table></figure>
+<p>根据 type 的值， value 去不同的值，然后求和，如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select &#10;&#9;sum(case when type = 1 then value * 0.1 when type = 2 then value * 0.2 when type = 3 then value * 0.3 when type = 4 then value * 0.4) &#10;as total &#10;from test;</span><br></pre></td></tr></table></figure>
+<p>再比如说，如下表结构:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table test1(&#10;id int not null AUTO_INCREMENT,&#10;name varchar(50) not null,&#10;birthday date not null,&#10;primary key (id)&#10;)&#10; &#10;INSERT INTO test1(name,birthday) VALUES&#10;(&#39;ll&#39;,&#39;1991-11-01&#39;),(&#39;yy&#39;,&#39;2000-11-01&#39;),(&#39;ss&#39;,&#39;2008-11-01&#39;),(&#39;dd&#39;,&#39;2010-11-01&#39;);</span><br></pre></td></tr></table></figure>
+<p>如下查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">select </span><br><span class="line">	<span class="keyword">name</span>, </span><br><span class="line">	<span class="keyword">case</span> <span class="keyword">when</span> birthday &lt; <span class="string">'1995-11-01'</span> <span class="keyword">then</span> <span class="string">'old'</span> <span class="keyword">when</span> birthday &lt; <span class="string">'2000-11-01'</span> <span class="keyword">then</span> <span class="string">'ok'</span> <span class="keyword">when</span> birthday &lt; <span class="string">'2011-11-01'</span> <span class="keyword">then</span> <span class="string">'young'</span> <span class="keyword">else</span> <span class="string">'too native'</span> <span class="keyword">end</span> </span><br><span class="line"><span class="keyword">as</span> hello </span><br><span class="line"><span class="keyword">from</span> test1;</span></span><br></pre></td></tr></table></figure>
+<p>SQL 中还有其他的判断语句， 如 IF 和 IFNULL, 如下表结构：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> test2 (</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> AUTO_INCREMENT,</span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">sex <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">primary <span class="keyword">key</span> (<span class="keyword">id</span>)</span><br><span class="line">);</span></span><br><span class="line"> </span><br><span class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> test2 (<span class="keyword">name</span>,sex) <span class="keyword">value</span>(<span class="string">'sdsd'</span>,<span class="number">1</span>),(<span class="string">'sdwe'</span>,<span class="number">2</span>);</span></span><br></pre></td></tr></table></figure>
+<p>如果使用 IF 如下查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">select </span><br><span class="line">	<span class="keyword">name</span> , <span class="keyword">if</span>(sex = <span class="number">1</span>, <span class="string">'male'</span>, <span class="string">'female'</span>) </span><br><span class="line"><span class="keyword">as</span> sex </span><br><span class="line"><span class="keyword">from</span> test2</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>IF(expr1,expr2,expr3)</p>
+<p>如果 expr1 是TRUE (expr1 &lt;&gt; 0 and expr1 &lt;&gt; NULL)，则 IF()的返回值为expr2; 否则返回值则为 expr3。IF() 的返回值为数字值或字符串值，具体情况视其所在语境而定。</p>
+<p>IFNULL(expr1,expr2)</p>
+<p>假如expr1 不为 NULL，则 IFNULL() 的返回值为 expr1; 否则其返回值为 expr2。IFNULL()的返回值是数字或是字符串，具体情况取决于其所使用的语境。</p>
+</blockquote>
+</span>
       
     </div>
 
@@ -212,11 +220,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/laravel/" rel="tag">#laravel</a>
-          
-            <a href="/tags/packages/" rel="tag">#packages</a>
-          
-            <a href="/tags/php/" rel="tag">#php</a>
+            <a href="/tags/mysql/" rel="tag">#mysql</a>
           
         </div>
       
@@ -225,13 +229,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/30/gulp-run-clear-报错/" rel="prev">gulp-run clear 报错</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/29/Centos-防火墙iptables-开启-3306端口/" rel="next">Centos 防火墙iptables 开启 3306端口</a>
+              <a href="/2015/10/24/Linux下MySQL5-6的修改字符集编码为UTF8/" rel="next">Linux下MySQL5.6的修改字符集编码为UTF8</a>
             
           </div>
         </div>
@@ -352,7 +354,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_安装_pingpong/workbench"><span class="nav-number">1.</span> <span class="nav-text">1. 安装 pingpong/workbench</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_配置_pingpong/workbench"><span class="nav-number">2.</span> <span class="nav-text">2. 配置 pingpong/workbench</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_创建扩展包"><span class="nav-number">3.</span> <span class="nav-text">3. 创建扩展包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_引入命名空间"><span class="nav-number">4.</span> <span class="nav-text">4. 引入命名空间</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
