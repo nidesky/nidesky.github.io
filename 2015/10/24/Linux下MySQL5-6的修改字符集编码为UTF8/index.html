@@ -26,7 +26,7 @@
 
 
 
-  <meta name="keywords" content="laravel,packages,php," />
+  <meta name="keywords" content="linux,mysql,utf8," />
 
 
 
@@ -37,25 +37,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
-2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
-运行命令1php artisan vendor:publish
-3.">
+<meta name="description" content="转自 Linux下MySQL5.6的修改字符集编码为UTF8（解决中文乱码问题）
+
+查看MySQL字符集登录MySQL查看用 SHOW VARIABLES LIKE ‘character%’; 下字符集，显示如下：
+1+--------------------------+----------------------------+&amp;#10;| Variable_name | Value |&amp;#10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Laravel 5.1 开发扩展包">
-<meta property="og:url" content="http://nidesky.github.io/2015/08/30/Laravel-5-1-开发扩展包/index.html">
+<meta property="og:title" content="Linux下MySQL5.6的修改字符集编码为UTF8">
+<meta property="og:url" content="http://nidesky.github.io/2015/10/24/Linux下MySQL5-6的修改字符集编码为UTF8/index.html">
 <meta property="og:site_name" content="丁俊斌的博客">
-<meta property="og:description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
-2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
-运行命令1php artisan vendor:publish
-3.">
-<meta property="og:updated_time" content="2015-08-29T17:03:43.000Z">
+<meta property="og:description" content="转自 Linux下MySQL5.6的修改字符集编码为UTF8（解决中文乱码问题）
+
+查看MySQL字符集登录MySQL查看用 SHOW VARIABLES LIKE ‘character%’; 下字符集，显示如下：
+1+--------------------------+----------------------------+&amp;#10;| Variable_name | Value |&amp;#10">
+<meta property="og:updated_time" content="2015-10-23T16:55:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laravel 5.1 开发扩展包">
-<meta name="twitter:description" content="1. 安装 pingpong/workbench1composer require pingpong/workbench
-2. 配置 pingpong/workbench12// 在 config/app.php 中的 providers 添加Pingpong\Workbench\WorkbenchServiceProvider
-运行命令1php artisan vendor:publish
-3.">
+<meta name="twitter:title" content="Linux下MySQL5.6的修改字符集编码为UTF8">
+<meta name="twitter:description" content="转自 Linux下MySQL5.6的修改字符集编码为UTF8（解决中文乱码问题）
+
+查看MySQL字符集登录MySQL查看用 SHOW VARIABLES LIKE ‘character%’; 下字符集，显示如下：
+1+--------------------------+----------------------------+&amp;#10;| Variable_name | Value |&amp;#10">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -65,7 +65,7 @@
   };
 </script>
 
-  <title> Laravel 5.1 开发扩展包 | 丁俊斌的博客 </title>
+  <title> Linux下MySQL5.6的修改字符集编码为UTF8 | 丁俊斌的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +163,7 @@
   <div id="posts" class="posts-expand">
     
 
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       
@@ -172,7 +172,7 @@
           
           
             
-              Laravel 5.1 开发扩展包
+              Linux下MySQL5.6的修改字符集编码为UTF8
             
           
         </h1>
@@ -181,8 +181,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-30T00:58:11+08:00" content="2015-08-30">
-            2015-08-30
+          <time itemprop="dateCreated" datetime="2015-10-24T00:50:19+08:00" content="2015-10-24">
+            2015-10-24
           </time>
         </span>
 
@@ -200,11 +200,17 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="1-_安装_pingpong/workbench">1. 安装 <code>pingpong/workbench</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require pingpong/workbench</span><br></pre></td></tr></table></figure>
-<h3 id="2-_配置_pingpong/workbench">2. 配置 <code>pingpong/workbench</code></h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 config/app.php 中的 providers 添加</span></span><br><span class="line">Pingpong\Workbench\WorkbenchServiceProvider</span><br></pre></td></tr></table></figure>
-<p>运行命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-_创建扩展包">3. 创建扩展包</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan workbench vendor/package&#10;php artisan workbench vendor/package --resources&#10;// php artisan workbench nidesky/sweet-alert</span><br></pre></td></tr></table></figure>
-<h3 id="4-_引入命名空间">4. 引入命名空间</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"autoload"</span>: &#123;</span><br><span class="line">    <span class="string">"classmap"</span>: [</span><br><span class="line">        <span class="string">"database"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"psr-4"</span>: &#123;</span><br><span class="line">        <span class="string">"App\\"</span>: <span class="string">"app/"</span>,</span><br><span class="line">+       <span class="string">"Nidesky\\SweetAlert\\"</span>: <span class="string">"workbench/nidesky/sweet-alert/src/Nidesky/SweetAlert"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><blockquote>
+<p>转自 <a href="http://www.2cto.com/database/201311/255324.html" target="_blank" rel="external">Linux下MySQL5.6的修改字符集编码为UTF8（解决中文乱码问题）</a></p>
+</blockquote>
+<h2 id="查看MySQL字符集">查看MySQL字符集</h2><p>登录MySQL查看用 <code>SHOW VARIABLES LIKE ‘character%’;</code> 下字符集，显示如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------+----------------------------+&#10;| Variable_name | Value |&#10;+--------------------------+----------------------------+&#10;| character_set_client | utf8 |&#10;| character_set_connection | utf8 |&#10;| character_set_database | latin1 |&#10;| character_set_filesystem | binary |&#10;| character_set_results | utf8 |&#10;| character_set_server | latin1 |&#10;| character_set_system | utf8 |&#10;| character_sets_dir | /usr/share/mysql/charsets/ |&#10;+--------------------------+----------------------------+</span><br></pre></td></tr></table></figure>
+<p>character_set_database和character_set_server的默认字符集还是latin1。</p>
+<h2 id="修改配置">修改配置</h2><p>最简单的完美修改方法，修改mysql的my.cnf文件中的字符集键值（注意配置的字段细节）：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#12289;&#22312;[client]&#23383;&#27573;&#37324;&#21152;&#20837;default-character-set=utf8&#65292;&#22914;&#19979;&#65306;&#10; &#10;[client]&#10;port = 3306&#10;socket = /var/lib/mysql/mysql.sock&#10;default-character-set=utf8&#10; &#10;2&#12289;&#22312;[mysqld]&#23383;&#27573;&#37324;&#21152;&#20837;character-set-server=utf8&#65292;&#22914;&#19979;&#65306;&#10; &#10;[mysqld]&#10;port = 3306&#10;socket = /var/lib/mysql/mysql.sock&#10;character-set-server=utf8&#10; &#10;3&#12289;&#22312;[mysql]&#23383;&#27573;&#37324;&#21152;&#20837;default-character-set=utf8&#65292;&#22914;&#19979;&#65306;&#10; &#10;[mysql]&#10;no-auto-rehash&#10;default-character-set=utf8</span><br></pre></td></tr></table></figure>
+<h2 id="修改完成">修改完成</h2><p>修改完成后，service mysql restart重启mysql服务就生效。注意：[mysqld]字段与[mysql]字段是有区别的。这点在网上没人反馈过。</p>
+<p>使用SHOW VARIABLES LIKE ‘character%’;查看，发现数据库编码全已改成utf8。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------+----------------------------+&#10;| Variable_name | Value |&#10;+--------------------------+----------------------------+&#10;| character_set_client | utf8 |&#10;| character_set_connection | utf8 |&#10;| character_set_database | utf8 |&#10;| character_set_filesystem | binary |&#10;| character_set_results | utf8 |&#10;| character_set_server | utf8 |&#10;| character_set_system | utf8 |&#10;| character_sets_dir | /usr/share/mysql/charsets/ |&#10;+--------------------------+----------------------------+</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -212,11 +218,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/laravel/" rel="tag">#laravel</a>
+            <a href="/tags/linux/" rel="tag">#linux</a>
           
-            <a href="/tags/packages/" rel="tag">#packages</a>
+            <a href="/tags/mysql/" rel="tag">#mysql</a>
           
-            <a href="/tags/php/" rel="tag">#php</a>
+            <a href="/tags/utf8/" rel="tag">#utf8</a>
           
         </div>
       
@@ -225,13 +231,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/30/gulp-run-clear-报错/" rel="prev">gulp-run clear 报错</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/29/Centos-防火墙iptables-开启-3306端口/" rel="next">Centos 防火墙iptables 开启 3306端口</a>
+              <a href="/2015/10/05/git笔记/" rel="next">git笔记</a>
             
           </div>
         </div>
@@ -352,7 +356,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_安装_pingpong/workbench"><span class="nav-number">1.</span> <span class="nav-text">1. 安装 pingpong/workbench</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_配置_pingpong/workbench"><span class="nav-number">2.</span> <span class="nav-text">2. 配置 pingpong/workbench</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_创建扩展包"><span class="nav-number">3.</span> <span class="nav-text">3. 创建扩展包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_引入命名空间"><span class="nav-number">4.</span> <span class="nav-text">4. 引入命名空间</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看MySQL字符集"><span class="nav-number">1.</span> <span class="nav-text">查看MySQL字符集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置"><span class="nav-number">2.</span> <span class="nav-text">修改配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改完成"><span class="nav-number">3.</span> <span class="nav-text">修改完成</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

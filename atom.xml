@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2015-10-05T16:47:21.000Z</updated>
+  <updated>2015-10-23T16:55:31.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux下MySQL5.6的修改字符集编码为UTF8]]></title>
+    <link href="http://nidesky.github.io/2015/10/24/Linux%E4%B8%8BMySQL5-6%E7%9A%84%E4%BF%AE%E6%94%B9%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E4%B8%BAUTF8/"/>
+    <id>http://nidesky.github.io/2015/10/24/Linux下MySQL5-6的修改字符集编码为UTF8/</id>
+    <published>2015-10-23T16:50:19.000Z</published>
+    <updated>2015-10-23T16:55:31.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>转自 <a href="http://www.2cto.com/database/201311/255324.html" target="_blank" rel="external">Linux下MySQL5.6的修改字符集编码为UTF8（解决中文乱码问题）</a></p>
+</blockquote>
+<h2 id="查看MySQL字符集">查看MySQL字符集</h2><p>登录MySQL查看用 <code>SHOW VARIABLES LIKE ‘character%’;</code> 下字符集，显示如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------+----------------------------+&#10;| Variable_name | Value |&#10;+--------------------------+----------------------------+&#10;| character_set_client | utf8 |&#10;| character_set_connection | utf8 |&#10;| character_set_database | latin1 |&#10;| character_set_filesystem | binary |&#10;| character_set_results | utf8 |&#10;| character_set_server | latin1 |&#10;| character_set_system | utf8 |&#10;| character_sets_dir | /usr/share/mysql/charsets/ |&#10;+--------------------------+----------------------------+</span><br></pre></td></tr></table></figure>
+<p>character_set_database和character_set_server的默认字符集还是latin1。</p>
+<h2 id="修改配置">修改配置</h2><p>最简单的完美修改方法，修改mysql的my.cnf文件中的字符集键值（注意配置的字段细节）：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#12289;&#22312;[client]&#23383;&#27573;&#37324;&#21152;&#20837;default-character-set=utf8&#65292;&#22914;&#19979;&#65306;&#10; &#10;[client]&#10;port = 3306&#10;socket = /var/lib/mysql/mysql.sock&#10;default-character-set=utf8&#10; &#10;2&#12289;&#22312;[mysqld]&#23383;&#27573;&#37324;&#21152;&#20837;character-set-server=utf8&#65292;&#22914;&#19979;&#65306;&#10; &#10;[mysqld]&#10;port = 3306&#10;socket = /var/lib/mysql/mysql.sock&#10;character-set-server=utf8&#10; &#10;3&#12289;&#22312;[mysql]&#23383;&#27573;&#37324;&#21152;&#20837;default-character-set=utf8&#65292;&#22914;&#19979;&#65306;&#10; &#10;[mysql]&#10;no-auto-rehash&#10;default-character-set=utf8</span><br></pre></td></tr></table></figure>
+<h2 id="修改完成">修改完成</h2><p>修改完成后，service mysql restart重启mysql服务就生效。注意：[mysqld]字段与[mysql]字段是有区别的。这点在网上没人反馈过。</p>
+<p>使用SHOW VARIABLES LIKE ‘character%’;查看，发现数据库编码全已改成utf8。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+--------------------------+----------------------------+&#10;| Variable_name | Value |&#10;+--------------------------+----------------------------+&#10;| character_set_client | utf8 |&#10;| character_set_connection | utf8 |&#10;| character_set_database | utf8 |&#10;| character_set_filesystem | binary |&#10;| character_set_results | utf8 |&#10;| character_set_server | utf8 |&#10;| character_set_system | utf8 |&#10;| character_sets_dir | /usr/share/mysql/charsets/ |&#10;+--------------------------+----------------------------+</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>转自 <a href="http://www.2cto.com/database/201311/255324.html" target="_blank" rel="external">Linux下MySQL5.6的修改字符集编码为UTF8（解决中文]]>
+    </summary>
+    
+      <category term="linux" scheme="http://nidesky.github.io/tags/linux/"/>
+    
+      <category term="mysql" scheme="http://nidesky.github.io/tags/mysql/"/>
+    
+      <category term="utf8" scheme="http://nidesky.github.io/tags/utf8/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[git笔记]]></title>
