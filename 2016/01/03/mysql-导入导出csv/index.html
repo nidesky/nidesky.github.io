@@ -37,16 +37,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="12345SELECT * FROM mytable INTO OUTFILE &apos;/tmp/mytable.csv&apos;FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; LINES TERMINATED BY &apos;\n&apos;；">
+<meta name="description" content="导出12345SELECT * FROM mytable INTO OUTFILE &apos;/tmp/mytable.csv&apos;FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; LINES TERMINATED BY &apos;\n&apos;；
+导入12345LOAD DATA INFILE &apos;/tmp/mytable.csv&apos; INTO TABLE mytable">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql 导入导出csv">
 <meta property="og:url" content="http://nidesky.github.io/2016/01/03/mysql-导入导出csv/index.html">
 <meta property="og:site_name" content="丁俊斌的博客">
-<meta property="og:description" content="12345SELECT * FROM mytable INTO OUTFILE &apos;/tmp/mytable.csv&apos;FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; LINES TERMINATED BY &apos;\n&apos;；">
-<meta property="og:updated_time" content="2016-01-03T15:50:43.000Z">
+<meta property="og:description" content="导出12345SELECT * FROM mytable INTO OUTFILE &apos;/tmp/mytable.csv&apos;FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; LINES TERMINATED BY &apos;\n&apos;；
+导入12345LOAD DATA INFILE &apos;/tmp/mytable.csv&apos; INTO TABLE mytable">
+<meta property="og:updated_time" content="2016-01-03T15:53:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql 导入导出csv">
-<meta name="twitter:description" content="12345SELECT * FROM mytable INTO OUTFILE &apos;/tmp/mytable.csv&apos;FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; LINES TERMINATED BY &apos;\n&apos;；">
+<meta name="twitter:description" content="导出12345SELECT * FROM mytable INTO OUTFILE &apos;/tmp/mytable.csv&apos;FIELDS TERMINATED BY &apos;,&apos; OPTIONALLY ENCLOSED BY &apos;&quot;&apos; LINES TERMINATED BY &apos;\n&apos;；
+导入12345LOAD DATA INFILE &apos;/tmp/mytable.csv&apos; INTO TABLE mytable">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -191,7 +194,8 @@
       
 
       
-        <span itemprop="articleBody"><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">SELECT * <span class="keyword">FROM</span> mytable </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">OUTFILE</span> <span class="string">'/tmp/mytable.csv'</span></span><br><span class="line"><span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line"><span class="keyword">OPTIONALLY</span> <span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">'"'</span> </span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span>；</span></span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><h1 id="导出">导出</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">SELECT * <span class="keyword">FROM</span> mytable </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">OUTFILE</span> <span class="string">'/tmp/mytable.csv'</span></span><br><span class="line"><span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line"><span class="keyword">OPTIONALLY</span> <span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">'"'</span> </span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span>；</span></span><br></pre></td></tr></table></figure>
+<h1 id="导入">导入</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">INFILE</span> <span class="string">'/tmp/mytable.csv'</span> </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">TABLE</span> mytable </span><br><span class="line"><span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line"><span class="keyword">OPTIONALLY</span> <span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">'"'</span> </span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span>;</span></span><br></pre></td></tr></table></figure></span>
       
     </div>
 
@@ -333,7 +337,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#导出"><span class="nav-number">1.</span> <span class="nav-text">导出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导入"><span class="nav-number">2.</span> <span class="nav-text">导入</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

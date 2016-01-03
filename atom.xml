@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://nidesky.github.io/"/>
-  <updated>2016-01-03T15:50:43.000Z</updated>
+  <updated>2016-01-03T15:53:37.000Z</updated>
   <id>http://nidesky.github.io/</id>
   
   <author>
@@ -19,10 +19,11 @@
     <link href="http://nidesky.github.io/2016/01/03/mysql-%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BAcsv/"/>
     <id>http://nidesky.github.io/2016/01/03/mysql-导入导出csv/</id>
     <published>2016-01-03T15:48:29.000Z</published>
-    <updated>2016-01-03T15:50:43.000Z</updated>
-    <content type="html"><![CDATA[<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">SELECT * <span class="keyword">FROM</span> mytable </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">OUTFILE</span> <span class="string">'/tmp/mytable.csv'</span></span><br><span class="line"><span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line"><span class="keyword">OPTIONALLY</span> <span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">'"'</span> </span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span>；</span></span><br></pre></td></tr></table></figure>]]></content>
+    <updated>2016-01-03T15:53:37.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="导出">导出</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">SELECT * <span class="keyword">FROM</span> mytable </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">OUTFILE</span> <span class="string">'/tmp/mytable.csv'</span></span><br><span class="line"><span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line"><span class="keyword">OPTIONALLY</span> <span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">'"'</span> </span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span>；</span></span><br></pre></td></tr></table></figure>
+<h1 id="导入">导入</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">INFILE</span> <span class="string">'/tmp/mytable.csv'</span> </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">TABLE</span> mytable </span><br><span class="line"><span class="keyword">FIELDS</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line"><span class="keyword">OPTIONALLY</span> <span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">'"'</span> </span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span>;</span></span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
-    <![CDATA[<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="]]>
+    <![CDATA[<h1 id="导出">导出</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</spa]]>
     </summary>
     
       <category term="mysql" scheme="http://nidesky.github.io/tags/mysql/"/>
